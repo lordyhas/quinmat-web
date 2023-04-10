@@ -3,23 +3,22 @@
 <head>
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with Creative Studio landing page.">
-    <meta name="author" content="Devcrud">
+    <meta name="description" content="">
+    <meta name="author" content="loryhas">
     <title> X Sample | Components</title>
 
     <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="{{asset("assets/vendors/themify-icons/css/themify-icons.css")}}">
 
     <!-- Bootstrap + Creative Studio main styles -->
-   <link rel="stylesheet" href="assets/css/creative-studio.css">
-   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="{{asset("assets/css/style.css")}}">
 </head>
 
 <body class="dark-theme">
 
    <!-- Page Header -->
-   <header class="header header-mini"> 
-      <div class="header-title">Components</div> 
+   <header class="header header-mini">
+      <div class="header-title">Components</div>
       <nav aria-label="breadcrumb">
          <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="en-home.html">Home</a></li>
@@ -49,7 +48,7 @@
       <button class="btn btn-primary w-md">w-md</button>
       <button class="btn btn-primary w-lg">w-lg</button>
 
-      <h6 class="section-secondary-title mt-5">Colors :</h6>          
+      <h6 class="section-secondary-title mt-5">Colors :</h6>
       <button type="button" class="btn btn-primary">Primary</button>
       <button type="button" class="btn btn-secondary">Secondary</button>
       <button type="button" class="btn btn-success">Success</button>
@@ -64,7 +63,7 @@
       <input class="btn btn-primary" type="button" value="Input">
       <input class="btn btn-primary" type="submit" value="Submit">
       <input class="btn btn-primary" type="reset" value="Reset">
-      
+
       <!-- devider -->
       <div class="py-5"></div>
 
@@ -73,7 +72,7 @@
       <hr>
       <div class="row mt-5">
          <div class="col-md-6">
-            <h6 class="section-secondary-title">Form controls :</h6>        
+            <h6 class="section-secondary-title">Form controls :</h6>
             <div class="form-group">
                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email address">
             </div>
@@ -111,21 +110,21 @@
             </div>
          </div>
          <div class="col-md-6">
-            <h6 class="section-secondary-title">Sizes :</h6>    
+            <h6 class="section-secondary-title">Sizes :</h6>
             <div class="form-group">
-               <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">             
+               <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
             </div>
             <div class="form-group">
                <input class="form-control" type="text" placeholder="Default input">
             </div>
             <div class="form-group">
-               <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"> 
+               <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
             </div>
          </div>
-      </div> <!-- end of inputs -->   
+      </div> <!-- end of inputs -->
 
       <!-- devider -->
-      <div class="py-5"></div>             
+      <div class="py-5"></div>
 
       <!-- Dropdowns -->
       <h3 class="components-section-title font-weight-normal">Dropdowns</h3>
@@ -187,8 +186,8 @@
             <a class="dropdown-item" href="#"><small>New around here? Sign up</small></a>
             <a class="dropdown-item" href="#"><small>Forgot password?</small></a>
          </div>
-      </div>       
-      <h6 class="section-secondary-title mt-5">Directions :</h6>  
+      </div>
+      <h6 class="section-secondary-title mt-5">Directions :</h6>
       <div class="btn-group dropup">
          <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropup
@@ -236,10 +235,10 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
          </div>
-      </div> <!-- end of Dropdowns -->  
+      </div> <!-- end of Dropdowns -->
 
       <!-- devider -->
-      <div class="py-5"></div>   
+      <div class="py-5"></div>
 
       <!-- navbars -->
       <h3 class="components-section-title font-weight-normal mt-5">Navigations</h3>
@@ -251,7 +250,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -264,7 +263,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -275,7 +274,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -288,7 +287,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -301,7 +300,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -314,7 +313,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -327,7 +326,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -340,7 +339,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -351,7 +350,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -364,7 +363,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -375,7 +374,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -388,7 +387,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -399,7 +398,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -412,7 +411,7 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-primary btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
@@ -423,7 +422,7 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ml-auto"> 
+               <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
                      <a class="nav-link" href="#about">About Us</a>
                   </li>
@@ -436,15 +435,15 @@
                   <li class="nav-item">
                      <a href="#book-table" class="ml-4 mt-1 btn btn-dark btn-sm">navbar button</a>
                   </li>
-               </ul>                       
+               </ul>
             </div>
          </div>
       </nav>
       <!-- End of navbars -->
 
       <!-- devider -->
-      <div class="py-5"></div>   
-      
+      <div class="py-5"></div>
+
       <!-- progress bars -->
       <div class="row justify-content-between">
          <div class="col-md-5">
@@ -536,7 +535,7 @@
       </div> <!-- End of Progress bars -->
 
       <!-- devider -->
-      <div class="py-5"></div>  
+      <div class="py-5"></div>
 
       <!-- Alerts -->
       <h3 class="components-section-title font-weight-normal mt-5">Alerts :</h3>
@@ -586,8 +585,8 @@
       <!-- end of alerts -->
 
       <!-- devider -->
-      <div class="py-5"></div> 
-   
+      <div class="py-5"></div>
+
       <!-- tables -->
       <h3 class="components-section-title">Tables</h3>
       <hr>
@@ -687,12 +686,12 @@
       <!-- end of tables -->
 
       <!-- devider -->
-      <div class="py-5"></div> 
+      <div class="py-5"></div>
 
       <!-- typography -->
       <h3 class="components-section-title">Typography</h3>
       <hr>
-      
+
       <table class="table table-borderless v-align-center">
          <tbody>
             <tr>
@@ -749,7 +748,7 @@
                </td>
             </tr>
 
-           
+
             <tr>
                <td><p class="font-weight-bold text-muted">Ordred List :</p></td>
                <td>
@@ -884,13 +883,13 @@
 
    <!-- Page Footer -->
    <div class="bg-dark text-light text-center border-top wow fadeIn">
-        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script></p>
     </div>
     <!-- End of Page Footer -->
-   
+
    <!-- core  -->
-   <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-   <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+   <script src="{{asset("assets/vendors/jquery/jquery-3.4.1.js")}}"></script>
+   <script src="{{asset("assets/vendors/bootstrap/bootstrap.bundle.js")}}"></script>
 
 </body>
 </html>
