@@ -42,8 +42,8 @@
                     <img src="{{asset("assets/imgs/--quinmat-papeterie-1.jpg")}}" alt="">
                     <div class="card-body">
                         <h5 class="card-title">News</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui,
-                            nostrum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo
+                            qui, nostrum.</p>
                         <div class="socials">
                             <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
                             <a href="javascript:void(0)"><i class="ti-twitter"></i></a>

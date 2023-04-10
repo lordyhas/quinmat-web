@@ -1,3 +1,6 @@
+@php
+$app_x = config('app.app_constant');
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -87,8 +90,8 @@
     <div class="box-item">
         <i class="ti-paint-roller"></i>
         <h6 class="box-title">Quincaillerie</h6>
-        <p>Des produits pour les professionnels et les particuliers, des outils électriques et manuels, des matériaux de
-            construction.
+        <p>Des produits pour les professionnels et les particuliers, des outils électriques et manuels,
+            des matériaux de construction.
         </p>
     </div>
     <div class="box-item">
@@ -96,6 +99,7 @@
         <h6 class="box-title">Mobilier</h6>
         <p>
             Une large gamme de meubles pour la maison et le bureau, y compris des chaises de bureau, tables et autres.
+            <br>
             <span class="text-white">.</span>
         </p>
     </div>
@@ -301,7 +305,7 @@
 <section id="products">
     <div class="container text-center">
         <h6 class="section-subtitle">Our Awesome Works</h6>
-        <h6 class="section-title mb-5">Nos Produit</h6>
+        <h6 class="section-title mb-5">Nos Produits</h6>
         <div class="row">
             <div class="col-sm-4">
                 <div class="card img-wrapper">

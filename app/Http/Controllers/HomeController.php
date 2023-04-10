@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use AppConstant;
+
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -17,16 +17,16 @@ class HomeController extends Controller
         if(!str_contains($lang,"fr")){
             return Redirect::route("home.index",["lang"=>"fr"]);
         }
-        return view('home',['app_x'=> new AppConstant(),"lang"=>$lang]);
+        return view('home',["lang"=>$lang]);
     }
 
     public function prod(string $lang): View
     {
-        return view('section.products', ['app_x'=> new AppConstant(),"lang"=>$lang]);
+        return view('section.products', ["lang"=>$lang]);
     }
 
     public function nws(string $lang): View
     {
-        return view('section.news', ['app_x'=> new AppConstant(),"lang"=>$lang]);
+        return view('section.news', ["lang"=>$lang]);
     }
 }

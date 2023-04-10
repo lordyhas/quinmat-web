@@ -2,6 +2,19 @@
 
 use Illuminate\Support\Facades\Facade;
 
+class AppConstant
+{
+    public string $name = "QUINMAT";
+    public string $mail = "info@quinmat.com";
+    public string $contact = "(+243) 824 130 000";
+    //public string $number = $contact;
+    public string $address = "650 Avenue Moëro, Lubumbashi";
+    public string $country = "Republique Democratique du Congo";
+    public string $country_short = "Congo-Kinshasa";
+    public string $country_sigle = "RDC";
+
+}
+
 return [
 
     /*
@@ -15,7 +28,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'QUINMAT'),
+    'app_constant' => new AppConstant(),
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +96,21 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Available locales
+    |--------------------------------------------------------------------------
+    |
+    | List all locales that your application works with
+    |
+    */
+    'available_locales' => [
+        'English' => 'en',
+        'French' => 'fr',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +123,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------

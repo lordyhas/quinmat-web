@@ -1,0 +1,29 @@
+{
+    "Email": "Email",
+    "Mot de passe": "Password",
+    "Confirmé mot de passe": "Confirm Password",
+    "Se souvenir de moi": "Remember me",
+    "Mot de passe oublié?": "Forgot your password?",
+    "Déjà enregistré?": "Already registered??",
+    "Enregistrer":  "Register",
+    "Sauver":  "Save",
+    "Enregistré": "Saved",
+    "Se connecter":  "Log in",
+    "Se déconnecter": "Log out",
+
+    "Tableau de bord AuthX" : "Dashboard AuthX",
+
+    "Prénom": "First name",
+    "Nom": "Name",
+
+    "Tableau de bord": "Dashboard",
+    "Gestion des produits": "Products management",
+
+    "Détails du profil": "Profile Information",
+    "Mettez à jour les informations de profil et l'adresse e-mail de votre compte.": "Update your account's profile information and email address.",
+    "Votre adresse e-mail n'est pas vérifiée.":"Your email address is unverified.",
+    "Cliquez ici pour renvoyer l'e-mail de vérification.":"Click here to re-send the verification email.",
+    "A new verification link has been sent to your email address.":"Un nouveau lien de vérification a été envoyé à votre adresse e-mail.",
+    "":"",
+    "_x": "_Null"
+}

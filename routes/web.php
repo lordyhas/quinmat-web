@@ -2,10 +2,9 @@
 require __DIR__ . '/app_constant.php';
 //use AppUtils\AppConstant;
 
-//use AppUtils\WebsiteState;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnderMaintenanceController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
@@ -41,10 +40,32 @@ if ($is_not_under_maintenance):
 
 
     Route::prefix('{lang}/home')->where(['lang' => '[a-zA-Z]{2}'])->group(function () {
-        Route::get('/', [HomeController::class, 'index'])->name('home.index');
-        Route::get('/x', [HomeController::class, 'prod'])->name('home.prd');
-        Route::get('/n', [HomeController::class, 'nws'])->name('home.nws');
+
+        Route::controller(HomeController::class)->group(function (){
+            Route::get('/','index')->name('home.index');
+            Route::get('/x', 'prod')->name('home.prd');
+            Route::get('/n', 'nws')->name('home.nws');
+        });
+
+        require __DIR__ . '/blog_route.php';
     });
+
+    Route::get('/welcome', function () {
+
+        return view('welcome');
+    })->name('welcome');
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+
+    Route::middleware('auth')->controller(ProfileController::class)->group(function () {
+        Route::get('/profile', 'edit')->name('profile.edit');
+        Route::patch('/profile', 'update')->name('profile.update');
+        Route::delete('/profile',  'destroy')->name('profile.destroy');
+    });
+
+    require __DIR__.'/auth.php';
 
 
     Route::get('/compo', function () {
@@ -53,10 +74,9 @@ if ($is_not_under_maintenance):
 
     Route::get('/hotfix', [UnderMaintenanceController::class, 'index']);
 
-    require __DIR__ . '/blog_route.php';
-
 else:
     Route::get('/', [UnderMaintenanceController::class, 'index']);
 
 endif;
+
 
