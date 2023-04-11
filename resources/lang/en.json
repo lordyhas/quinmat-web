@@ -1,9 +1,12 @@
 {
     "Email": "Email",
     "Mot de passe": "Password",
+    "Mot de passe actuel": "Current Password",
+    "Nouveau mot de passe": "New Password",
     "Confirmé mot de passe": "Confirm Password",
-    "Se souvenir de moi": "Remember me",
     "Mot de passe oublié?": "Forgot your password?",
+
+    "Se souvenir de moi": "Remember me",
     "Déjà enregistré?": "Already registered??",
     "Enregistrer":  "Register",
     "Sauver":  "Save",
@@ -23,7 +26,14 @@
     "Mettez à jour les informations de profil et l'adresse e-mail de votre compte.": "Update your account's profile information and email address.",
     "Votre adresse e-mail n'est pas vérifiée.":"Your email address is unverified.",
     "Cliquez ici pour renvoyer l'e-mail de vérification.":"Click here to re-send the verification email.",
-    "A new verification link has been sent to your email address.":"Un nouveau lien de vérification a été envoyé à votre adresse e-mail.",
+    "Un nouveau lien de vérification a été envoyé à votre adresse e-mail.": "A new verification link has been sent to your email address.",
+    "Assurez-vous que votre compte utilise un mot de passe long et aléatoire pour rester en sécurité.":"Ensure your account is using a long, random password to stay secure.",
+    "Mettre à jour le mot de passe":"Update Password",
+
+    "Supprimer le compte":"Delete Account",
+    "Êtes-vous sûr de vouloir supprimer votre compte?":"Are you sure you want to delete your account?",
+    "Une fois votre compte supprimé, toutes ses ressources et données seront définitivement supprimées. Avant de supprimer votre compte, veuillez télécharger les données ou informations que vous souhaitez conserver.":"Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.",
+    "Une fois votre compte supprimé, toutes ses ressources et données seront définitivement supprimées. Veuillez saisir votre mot de passe pour confirmer que vous souhaitez supprimer définitivement votre compte.":"Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.",
     "":"",
     "_x": "_Null"
 }
