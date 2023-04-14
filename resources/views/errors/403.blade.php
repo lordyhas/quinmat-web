@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>500 | Something went wrong on our end</title>
+    <title>Forbidden | Error 403 </title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
@@ -131,10 +131,10 @@
 <div id="notfound">
     <div class="notfound">
         <div class="notfound-404">
-            <h3>Oops! Something went wrong on our end <br></h3>
-            <h1><span>5</span><span>0</span><span>0</span></h1>
+            <h3>Error 403 Forbidden, Access Denied<br></h3>
+            <h1><span>4</span><span>0</span><span>3</span></h1>
         </div>
-        <h2>Our team is working to fix the issue as soon as possible. Please try again later or contact our support team for assistance.</h2>
+        <h2>Sorry, you don't have permission to access this resources. </h2>
     </div>
 </div>
 

@@ -813,7 +813,16 @@ $app_x = config('app.app_constant');
                         <h5>QUINMAT</h5>
                         <p>ww.quinmat.com</p>
                     </div>
+
                 </div>
+                <p class="social-links mt-3 mb-2">
+                    <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                    <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                    <a href="javascript:void(0)" class="link"><i class="ti-linkedin"></i></a>
+                    <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                    <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+                </p>
+
             </div>
             <div class="form">
                 <h6 class="section-subtitle">Disponible 24/7</h6>
@@ -878,6 +887,7 @@ $app_x = config('app.app_constant');
                                 <a href="#blog">Blog</a>
                                 <a href="#">Faq</a>
                                 <a href="#">Privacy Policy</a>
+                                <a href="{{route("dashboard")}}">Employee</a>
                             </div>
                         </div>
                     </li>

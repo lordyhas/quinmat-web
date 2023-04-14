@@ -39,6 +39,8 @@ if ($is_not_under_maintenance):
     });
 
 
+
+
     Route::prefix('{lang}/home')->where(['lang' => '[a-zA-Z]{2}'])->group(function () {
 
         Route::controller(HomeController::class)->group(function (){
@@ -54,6 +56,11 @@ if ($is_not_under_maintenance):
 
         return view('welcome');
     })->name('welcome');
+
+    Route::get('/error', function () {
+        abort("403");
+        //return view('welcome');
+    })->name('error');
 
     Route::get('/dashboard', function () {
         return view('dashboard');

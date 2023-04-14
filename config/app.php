@@ -9,7 +9,7 @@ class AppConstant
     public string $contact = "(+243) 824 130 000";
     //public string $number = $contact;
     public string $address = "650 Avenue Moëro, Lubumbashi";
-    public string $country = "Republique Democratique du Congo";
+    public string $country = "République Démocratique du Congo";
     public string $country_short = "Congo-Kinshasa";
     public string $country_sigle = "RDC";
 
