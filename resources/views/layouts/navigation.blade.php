@@ -5,12 +5,10 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <!-- a href="{ { route('dashboard') } }">
+                    <a href="{{ route('home.index', ["lang"=>"fr"]) }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                    </a -->
-                    <a class="navbar-brand" href="{{route("home.index", ["lang"=>"fr"])}}">
-                        <img class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" src="{{asset('assets/imgs/logo.png')}}" alt="Logo">
                     </a>
+
                 </div>
 
                 <!-- Navigation Links -->
@@ -20,6 +18,9 @@
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('products.manager')">
                         {{ __('Gestion des produits') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                        {{ __('Administrator') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -47,7 +48,6 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">

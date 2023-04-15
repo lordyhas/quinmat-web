@@ -5,6 +5,7 @@ require __DIR__ . '/app_constant.php';
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnderMaintenanceController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
@@ -57,13 +58,20 @@ if ($is_not_under_maintenance):
         return view('welcome');
     })->name('welcome');
 
+    Route::get('/admin', function () {
+
+        return view('admin');
+    })->name('admin');
+
     Route::get('/error', function () {
         abort("403");
         //return view('welcome');
     })->name('error');
 
     Route::get('/dashboard', function () {
+        //if(Auth::user()->is_authorized)
         return view('dashboard');
+
     })->middleware(['auth', 'verified'])->name('dashboard');
 
     Route::middleware('auth')->controller(ProfileController::class)->group(function () {
