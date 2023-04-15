@@ -1,6 +1,9 @@
-@php
-$app_x = config('app.app_constant');
-@endphp
+<!--
+Powered by QUINMAT SARL.
+Developed by QUINMAT TEAM.
+Directed by Hassan Kajila.
+-->
+@php $app_x = config('app.app_constant'); @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -759,6 +762,7 @@ $app_x = config('app.app_constant');
                     Vous cherchez des outils de qualité pour vos projets de construction ou de rénovation ?
                     Ne cherchez plus ! Chez QUINMAT, nous avons tout ce dont vous avez besoin pour mener à
                     bien votre projet.
+
                     Nous offrons une large gamme d’outils et d’équipements pour tous les types de projets,
                     des plus petits aux plus grands. Nous sommes fiers de fournir des produits de qualité
                     supérieure à des prix compétitifs.
@@ -815,12 +819,8 @@ $app_x = config('app.app_constant');
                     </div>
 
                 </div>
-                <p class="social-links mt-3 mb-2">
-                    <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                    <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                    <a href="javascript:void(0)" class="link"><i class="ti-linkedin"></i></a>
-                    <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                    <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+                <p class="mt-3 mb-2">
+                    <x-social-links></x-social-links>
                 </p>
 
             </div>
@@ -836,7 +836,7 @@ $app_x = config('app.app_constant');
                     <div class="form-group">
                         <label for="exampleInputPassword1"></label>
                         <input type="text" class="form-control form-control-lg" id="exampleInputPassword1"
-                               placeholder="Entrer l'objet du message" required>
+                               placeholder="Entrer votre nom" required>
                     </div>
                     <div class="form-group">
                         <label for="contactMessage">
@@ -891,7 +891,10 @@ $app_x = config('app.app_constant');
                                 <a href="#blog">Blog</a>
                                 <a href="#">Faq</a>
                                 <a href="#">Privacy Policy</a>
-                                <a href="{{route("dashboard")}}">Employee</a>
+                                @if(Route::has('login'))
+                                    <a href="{{route("dashboard")}}">Employee</a>
+                                @endif
+
                             </div>
                         </div>
                     </li>
@@ -906,14 +909,8 @@ $app_x = config('app.app_constant');
 
                         <p><i class="ti-mobile"></i>{{$app_x->contact}}</p>
                         <p><i class="ti-email"></i>{{$app_x->mail}}</p>
-                        <div class="social-links">
-                            <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-linkedin"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
-                        </div>
+
+                        <x-social-links></x-social-links>
                     </li>
                 </ul>
             </div>
@@ -936,29 +933,4 @@ $app_x = config('app.app_constant');
 </html>
 
 
-<!--
-QUINMAT est une entreprise qui vous offre des solutions complètes pour vos besoins en quincaillerie, papeterie,
-équipement médical et mobilier. Que vous soyez un particulier, une entreprise ou une institution, vous trouverez
-chez QUINMAT des produits de qualité, des prix compétitifs et un service personnalisé.
-
-QUINMAT dispose d’un large assortiment de produits de quincaillerie, allant des outils aux matériaux de construction,
-en passant par les peintures et les accessoires. Vous pouvez également commander en ligne et bénéficier d’une livraison
-rapide et sécurisée.
-
-QUINMAT vous propose également une gamme variée de produits de papeterie, pour vos besoins scolaires, professionnels ou
-personnels. Vous y trouverez des cahiers, des stylos, des cartouches d’encre, des imprimantes, des ordinateurs et bien
-plus encore.
-
-QUINMAT est aussi votre partenaire de confiance pour l’équipement médical. Que ce soit pour l’hôpital, la clinique ou
-le cabinet médical, vous trouverez chez QUINMAT du matériel de diagnostic, de soin, de chirurgie, de laboratoire et de
-radiologie. QUINMAT vous accompagne également dans l’installation et la maintenance de votre équipement.
-
-QUINMAT vous offre enfin une sélection de mobilier adapté à vos espaces de vie et de travail.
-Vous y trouverez des meubles de bureau, des chaises, des tables, des armoires, des étagères et des coffres-forts.
-Vous pouvez également demander un devis gratuit et personnalisé pour votre projet d’aménagement.
-
-QUINMAT est une entreprise qui a à cœur la satisfaction de ses clients. C’est pourquoi elle vous
-garantit un service après-vente efficace et réactif. N’hésitez pas à contacter QUINMAT pour toute
-demande d’information ou de devis. QUINMAT est située à Lubumbashi1, au 650 Avenue Moero1, et vous pouvez la
-joindre au 0824 130 0001 ou via sa page Facebook2.
--->
+<!-- END  -->

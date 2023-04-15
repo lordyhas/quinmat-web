@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-sm-6 col-md-4">
                     <div class="card text-center mb-4">
-                        <img src="{{asset("assets/imgs/catalog-3.jpg")}}">
+                        <img src="{{asset("assets/imgs/catalog-3.jpg")}}" alt="">
                         <div class="card-body">
                             <h6 class="small text-primary font-weight-bold">Catalogue</h6>
                             <h5 class="card-title">Cover design</h5>
