@@ -12,6 +12,10 @@ class AppConstant
     public string $country = "République Démocratique du Congo";
     public string $country_short = "Congo-Kinshasa";
     public string $country_sigle = "RDC";
+    public string $facebook = "https://web.facebook.com/Quinmatlshi/";
+    public string $instagram = "https://www.instagram.com/";
+    public string $twitter = "https://twitter.com/QuinmatS";
+    public string $linkedin = "https://www.linkedin.com/";
 
 }
 
@@ -30,6 +34,14 @@ return [
 
     'name' => env('APP_NAME', 'QUINMAT'),
     'app_constant' => new AppConstant(),
+
+    'mail' => (new AppConstant())->mail,
+    'contact' => (new AppConstant())->contact,
+
+    'facebook' => (new AppConstant())->facebook,
+    'twitter' => (new AppConstant())->twitter,
+    'linkedin' => (new AppConstant())->linkedin,
+    'instagram' => (new AppConstant())->instagram,
 
     /*
     |--------------------------------------------------------------------------
