@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/app_constant.php';
+
 //use AppUtils\AppConstant;
 
 use App\Http\Controllers\HomeController;
@@ -39,48 +40,48 @@ if ($is_not_under_maintenance):
         return Redirect::route("home.index", ["lang" => "fr"]);
     });
 
+    Route::prefix('{lang?}')
+        ->where(['lang' => '[a-zA-Z]{2}'])
+        ->middleware('setlocale')
+        ->group(function () {
+            /*if (array_key_exists($locale, Config::get('languages'))) {
+                //Session::put('applocale', $locale);
+            }*/
 
+            Route::controller(HomeController::class)->group(function () {
+                Route::get('/home', 'index')->name('home.index');
+                Route::get('/home/x', 'prod')->name('home.prd');
+                Route::get('/home/n', 'nws')->name('home.nws');
+            });
 
+            require __DIR__ . '/blog_route.php';
 
-    Route::prefix('{lang}/home')->where(['lang' => '[a-zA-Z]{2}'])->group(function () {
+            Route::get('/welcome', function () {
+                return view('welcome');
+            })->name('welcome');
 
-        Route::controller(HomeController::class)->group(function (){
-            Route::get('/','index')->name('home.index');
-            Route::get('/x', 'prod')->name('home.prd');
-            Route::get('/n', 'nws')->name('home.nws');
+            Route::get('/admin', function () {
+                return view('admin');
+            })->name('admin');
+
+            Route::get('/error', function () {
+                abort("403");
+                //return view('welcome');
+            })->name('error');
+
+            Route::get('/dashboard', function () {
+                //if(Auth::user()->is_authorized)
+                return view('dashboard');
+            })->middleware(['auth', 'verified'])->name('dashboard');
+
+            Route::middleware('auth')->controller(ProfileController::class)->group(function () {
+                Route::get('/profile', 'edit')->name('profile.edit');
+                Route::patch('/profile', 'update')->name('profile.update');
+                Route::delete('/profile', 'destroy')->name('profile.destroy');
+            });
+
+            require __DIR__ . '/auth.php';
         });
-
-        require __DIR__ . '/blog_route.php';
-    });
-
-    Route::get('/welcome', function () {
-
-        return view('welcome');
-    })->name('welcome');
-
-    Route::get('/admin', function () {
-
-        return view('admin');
-    })->name('admin');
-
-    Route::get('/error', function () {
-        abort("403");
-        //return view('welcome');
-    })->name('error');
-
-    Route::get('/dashboard', function () {
-        //if(Auth::user()->is_authorized)
-        return view('dashboard');
-
-    })->middleware(['auth', 'verified'])->name('dashboard');
-
-    Route::middleware('auth')->controller(ProfileController::class)->group(function () {
-        Route::get('/profile', 'edit')->name('profile.edit');
-        Route::patch('/profile', 'update')->name('profile.update');
-        Route::delete('/profile',  'destroy')->name('profile.destroy');
-    });
-
-    require __DIR__.'/auth.php';
 
 
     Route::get('/compo', function () {

@@ -14,9 +14,31 @@ namespace App\Models{
 /**
  * App\Models\DoctorContact
  *
+ * @property int $id
+ * @property string|null $first_name
+ * @property string|null $middle_name
+ * @property string|null $last_name
+ * @property string|null $hospital
+ * @property string|null $location
+ * @property string|null $speciality
+ * @property int $is_doctor
+ * @property string $last_update
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact query()
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereHospital($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereIsDoctor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereLastUpdate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereLocation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereMiddleName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereSpeciality($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 	class IdeHelperDoctorContact {}
@@ -26,9 +48,21 @@ namespace App\Models{
 /**
  * App\Models\EmailAddress
  *
+ * @property int $id
+ * @property string $email
+ * @property int $doctor_id
+ * @property string $last_update
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress query()
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereDoctorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereLastUpdate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 	class IdeHelperEmailAddress {}
@@ -100,9 +134,21 @@ namespace App\Models{
 /**
  * App\Models\PhoneNumber
  *
+ * @property int $id
+ * @property string $phone_number
+ * @property int $doctor_id
+ * @property string $last_update
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber query()
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereDoctorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereLastUpdate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber wherePhoneNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 	class IdeHelperPhoneNumber {}

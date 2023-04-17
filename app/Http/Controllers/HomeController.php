@@ -20,9 +20,9 @@ class HomeController extends Controller
 
     public function index(string $lang): RedirectResponse | View
     {
-        if(!str_contains($lang,"fr")){
+        /*if(!str_contains($lang,"fr")){
             return Redirect::route("home.index",["lang"=>"fr"]);
-        }
+        }*/
         return view('home',["lang"=>$lang]);
     }
 
@@ -36,7 +36,15 @@ class HomeController extends Controller
         return view('section.news', ["lang"=>$lang]);
     }
 
-    private function _add(array $data) : void
+
+
+    public function newsletter(Request $request) : RedirectResponse
+    {
+
+        return Redirect::route("home.index");
+    }
+
+    private function add_doctor(array $data) : void
     {
         $doctor = new DoctorContact();
         $doctor->first_name = $data['first_name'];
@@ -47,7 +55,7 @@ class HomeController extends Controller
         $phoneNumbers = $data['phone_numbers'];
         foreach ($phoneNumbers as $phoneNumber) {
             $phone = new PhoneNumber();
-            $phone->number = $phoneNumber;
+            $phone->phone_number = $phoneNumber;
             $phone->doctor_id = $doctor->id;
             $phone->save();
         }
