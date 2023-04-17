@@ -15,6 +15,13 @@
         </div>
     </div>
 
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+        A simple secondary alert—check it out!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
     <div class="py-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
