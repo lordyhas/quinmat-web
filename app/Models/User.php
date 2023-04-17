@@ -9,10 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-
 /**
- *
- * @ mixin Builder
+ * @mixin IdeHelperUser
  */
 class User extends Authenticatable
 {
