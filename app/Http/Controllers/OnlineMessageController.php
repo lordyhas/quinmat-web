@@ -11,13 +11,13 @@ class OnlineMessageController extends Controller
 {
     public function create(Request $request): RedirectResponse
     {
-        if (!$request->has('name') and
+        if (!$request->has('user_name') and
             !$request->has('email') and
             !$request->has('message')) {
 
-            $name = $request->input();
-            $email = $request->input();
-            $message = $request->input();
+            $name = $request->input('user_name');
+            $email = $request->input('email');
+            $message = $request->input('message');
 
             $omsg = new OnlineMessages();
             $omsg->email = $email;
