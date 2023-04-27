@@ -121,12 +121,9 @@ if ($is_not_under_maintenance):
         Route::get('/doctor_get', 'show')->name("doctor.show");
     });
 
-
-    Route::get('/compo', function () {
-        return view('components');
-    });
-
-    Route::get('/hotfix', [UnderMaintenanceController::class, 'index']);
+    if(config('app.debug')):
+        require __DIR__ . '/test_routes.php';
+    endif;
 
 else:
     Route::get('/', [UnderMaintenanceController::class, 'index']);

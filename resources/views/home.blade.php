@@ -18,9 +18,7 @@ Directed by Hassan Kajila.
     <!-- font icons -->
     <link rel="stylesheet" href="{{asset('assets/vendors/themify-icons/css/themify-icons.css')}} ">
 
-
     <!-- Bootstrap + main styles -->
-
     <!-- { {asset('')} } -->
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -54,16 +52,6 @@ Directed by Hassan Kajila.
                 <li class="nav-item">
                     <a class="nav-link" href="#products">Produit</a>
                 </li>
-                @php/*
-
-                <!-- li class="nav-item">
-                    <a class="nav-link" href="#team">Team</a>
-                </li -->
-                <!-- li class="nav-item">
-                    <a class="nav-link" href="#testimonial">Comments</a>
-                </li -->
-                */@endphp
-
                 <li class="nav-item">
                     <a class="nav-link" href="#blog">Blog</a>
                 </li>
@@ -124,7 +112,6 @@ Directed by Hassan Kajila.
         <p>
             Fournit des équipements médicaux tels que des lits d’hôpitaux, des fauteuils roulants et des matériels de
             diagnostic.
-
         </p>
     </div>
 </div>
@@ -140,45 +127,21 @@ Directed by Hassan Kajila.
             <div class="col-md-7 col-lg-8">
                 <h6 class="section-subtitle mb-0">QUINMAT S.A.R.L</h6>
                 <h6 class="section-title mb-3">Qui sommes-nous ?</h6>
-
                 <p>
                     Quinmat est une entreprise qui se spécialise dans la vente de produits de quincaillerie,
                     de papeterie et d’équipement médical et mobilier. Nous sommes fiers de fournir des produits
                     de qualité à nos clients depuis plusieurs années. Nous sommes convaincus que notre engagement
                     envers la qualité et le service à la clientèle est ce qui nous distingue des autres entreprises.
                 </p>
-
                 <p>
                     Chez QUINMAT, nous avons tout ce dont vous avez besoin pour mener à bien votre projet.
                     Nous offrons une large gamme d’outils et d’équipements pour tous les types de projets,
                     des plus petits aux plus grands. Nous sommes fiers de fournir des produits de qualité
                     supérieure à des prix compétitifs.
                 </p>
-
-                @php/*
-
-                <!-- p>
-                    Notre quincaillerie offre une large gamme de produits pour les professionnels et les
-                    particuliers, y compris des outils électriques et manuels, des matériaux de construction et des
-                    fournitures pour la maison. </br>
-
-                    Notre papeterie propose une grande variété de fournitures de bureau, y compris des stylos,
-                    des cahiers et des enveloppes. </br>
-
-                    Notre service d’équipement médical fournit des équipements médicaux tels que des lits
-                    d’hôpitaux, des fauteuils roulants et des béquilles. </br>
-
-                    Enfin, notre service d’équipement mobilier propose une large gamme de meubles pour la maison
-                    et le bureau.
-                </p -->
-                */@endphp
-
-
                 <p>
                     Nous sommes fiers de servir nos clients avec les meilleurs produits et services possibles.
                 </p>
-
-
             </div>
         </div>
     </div>
@@ -211,36 +174,8 @@ Directed by Hassan Kajila.
     </div>
 </section>
 <!-- End Of About Sectoin -->
-@php/*
-   <!-- div class="row">
-    Quincaillerie : QUINMAT vous propose un large assortiment de produits de quincaillerie,
-    allant des outils aux matériaux de construction, en passant par les peintures et les accessoires.
 
-    Papeterie : QUINMAT vous offre une gamme variée de produits de papeterie, pour vos besoins scolaires,
-    professionnels ou personnels. Vous y trouverez des cahiers, des stylos, des cartouches d’encre,
-    des imprimantes, des ordinateurs et bien plus encore.
-
-    Équipement médical : QUINMAT est votre partenaire de confiance pour l’équipement médical.
-    Que ce soit pour l’hôpital, la clinique ou le cabinet médical, vous trouverez chez QUINMAT du
-    matériel de diagnostic, de soin, de chirurgie, de laboratoire et de radiologie. QUINMAT vous accompagne
-    également dans l’installation et la maintenance de votre équipement.
-
-    Mobilier : QUINMAT vous propose une sélection de mobilier adapté à vos espaces de vie et de travail.
-    Vous y trouverez des meubles de bureau, des chaises, des tables, des armoires, des étagères et des
-    coffres-forts. Vous pouvez aussi demander un devis gratuit et personnalisé pour votre projet
-    d’aménagement.
-    <ul>
-        <li>“Quinmat, votre partenaire pour tous vos besoins”</li>
-        <li>“Quinmat, la qualité à votre service”</li>
-        <li>“Quinmat, l’excellence pour tous vos projets”</li>
-        <li>“Quinmat, votre satisfaction est notre priorité”</li>
-    </ul>
-</div -->
-
-        */@endphp
-
-
-    <!-- Service Section -->
+<!-- Service Section -->
 <section id="service">
     <div class="container text-center">
         <h6 class="section-subtitle text-center">Faire Advenir</h6>
@@ -293,7 +228,6 @@ Directed by Hassan Kajila.
                     <div class="card-body">
                         <img src="{{asset('assets/imgs/quinmat-logo-mob.jpg')}}" alt="">
                         <h5 class="card-title text-primary">Mobilier</h5>
-
                         <p>
                             QUINMAT vous propose des meubles adaptés à vos espaces de vie et de travail.
                             Choisissez des meubles de bureau, des chaises, des tables, des armoires,
@@ -327,7 +261,7 @@ Directed by Hassan Kajila.
                     </div>
                 </div>
                 <div class="card img-wrapper">
-                    <img src="{{asset("assets/images/slides/Slide17x.PNG")}}" alt="">
+                    <img src="{{asset("assets/images/slides/Slide17x.jpg")}}" alt="">
                     <div class="overlay">
                         <div class="overlay-infos">
                             <h5>Mobilier</h5>
@@ -340,7 +274,7 @@ Directed by Hassan Kajila.
             </div>
             <div class="col-sm-4">
                 <div class="card img-wrapper">
-                    <img src="{{asset("assets/images/slides/Slide9.PNG")}}" alt="">
+                    <img src="{{asset("assets/images/slides/Slide9.jpg")}}" alt="">
                     <div class="overlay">
                         <div class="overlay-infos">
                             <h5>Quincaillerie</h5>
@@ -363,7 +297,7 @@ Directed by Hassan Kajila.
             </div>
             <div class="col-sm-4">
                 <div class="card img-wrapper">
-                    <img src="{{asset("assets/images/slides/Slide16.PNG")}}" alt="">
+                    <img src="{{asset("assets/images/slides/Slide16.jpg")}}" alt="">
                     <div class="overlay">
                         <div class="overlay-infos">
                             <h5>Mobilier</h5>
@@ -373,7 +307,7 @@ Directed by Hassan Kajila.
                     </div>
                 </div>
                 <div class="card img-wrapper">
-                    <img src="{{asset("assets/images/slides/Slide10x.PNG")}}" alt="">
+                    <img src="{{asset("assets/images/slides/Slide10x.jpg")}}" alt="">
                     <div class="overlay">
                         <div class="overlay-infos">
                             <h5>Quincaillerie</h5>
@@ -451,66 +385,6 @@ Directed by Hassan Kajila.
 <!-- Subscription Section -->
 <section id="subscription">
     <div class="container">
-
-        @php/*
-           <!--
-        <h6 class="section-subtitle text-center">Commentaires</h6>
-        <h6 class="section-title text-center mb-6">Ce que nos clients disent</h6>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="testimonial-wrapper">
-                    <div class="img-holder">
-                        <img src="assets/imgs/profile1-.jpg" alt="">
-                    </div>
-                    <div class="body">
-                        <p class="subtitle">Je suis un entrepreneur dans le domaine de la construction et
-                            je travaille avec QUINMAT depuis plusieurs années. Je suis très satisfait de leur
-                            service et de la qualité de leurs produits. Ils ont toujours ce dont j’ai besoin en stock.
-                            Ils me conseillent également sur les meilleures solutions techniques pour mes projets.
-                            QUINMAT est un partenaire de confiance et je les recommande vivement.</p>
-                        <h6 class="title">Richard Reb</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonial-wrapper">
-                    <div class="img-holder">
-                        <img src="assets/imgs/profile1-.jpg" alt="">
-                    </div>
-                    <div class="body">
-                        <p class="subtitle">
-                            Je suis un professeur de français et je me fournis régulièrement chez QUINMAT pour mes
-                            besoins en papeterie. Je trouve chez eux tout ce dont j’ai besoin pour mes cours:
-                            des cahiers, des stylos, des livres, des dictionnaires, etc. Les produits sont de bonne
-                            qualité et les prix sont raisonnables. Le personnel est accueillant et compétent.
-                            Je suis toujours satisfait de mon passage chez QUINMAT.</p>
-                        <h6 class="title">William Kazo</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-10"></div>
-
-            <div class="col-md-2"><a href="components.php" class="d-block mt-3">Laisser un commentaire...</a></div>
-        </div>
-        -->
-
-        <!-- javascript:void(0)
-
-            Envie de profiter de nos offres exclusives ?
-
-            Inscrivez-vous à notre newsletter et recevez un bon d’achat de 10% sur votre prochaine commande !
-
-            En plus, vous serez les premiers à découvrir nos nouveautés, nos promotions et nos conseils.
-
-            Ne ratez pas cette opportunité, cliquez vite sur le bouton ci-dessous
-
-            Tenez-vous au courant des nouvelles offres, sorties et plus de QUINMAT
-            -->
-
-        */@endphp
 
         <div class="py-5"></div>
         <div class="row">
@@ -604,25 +478,6 @@ Directed by Hassan Kajila.
                             la santé, y compris des lits d’hôpitaux, des fauteuils roulants, des équipements
                             de diagnostic... <br>.
                         </p>
-                        @php
-                            /*
-                             <!--
-
-                            Notre entreprise fournit une large gamme d’équipements médicaux pour les professionnels de
-                            la santé, y compris des lits d’hôpitaux, des fauteuils roulants et des équipements
-                            de diagnostic.
-
-                            Nous sommes fiers de fournir des produits de qualité à nos clients depuis plusieurs années
-                            et nous sommes déterminés à offrir les meilleurs services possibles.
-
-                            Nous offrons également des services d’installation et de maintenance pour tous nos produits.
-
-                            Nous sommes fiers de servir nos clients avec les meilleurs produits et services possibles
-                            -->
-
-                            */
-                        @endphp
-
 
                         <a href="javascript:void(0)" class="d-block mt-3">Read More...</a>
                     </div>
@@ -642,24 +497,6 @@ Directed by Hassan Kajila.
                             stylos, des cahiers et des enveloppes. Nous sommes fiers de fournir des produits de
                             qualité à nos clients depuis plusieurs années...
                         </p>
-
-                        @php
-                            /*
-                            <!--
-                                Notre papeterie propose une grande variété de fournitures de bureau, y compris des
-                                stylos, des cahiers et des enveloppes. Nous sommes fiers de fournir des produits de
-                                qualité à nos clients depuis plusieurs années
-
-                                Nous offrons également des services d’impression pour les entreprises et les
-                                particuliers, y compris l’impression de cartes de visite, de brochures et de dépliants.
-
-                                Nous sommes fiers de servir nos clients avec les meilleurs produits et services
-                                possibles.
-                            -->
-
-                            */
-                        @endphp
-
 
                         <a href="javascript:void(0)" class="d-block mt-3">Read More...</a>
                     </div>
@@ -681,29 +518,6 @@ Directed by Hassan Kajila.
                         </p>
                         <a href="javascript:void(0)" class="d-block mt-3">Read More...</a>
                     </div>
-
-                    @php
-                        /*
-
-                        Vous cherchez des outils de qualité pour vos projets de construction ou de rénovation ?
-                        Ne cherchez plus ! Chez QUINMAT, nous avons tout ce dont vous avez besoin pour mener à
-                        bien votre projet.
-
-                        Nous offrons une large gamme d’outils et d’équipements pour tous les types de projets,
-                        des plus petits aux plus grands. Nous sommes fiers de fournir des produits de qualité
-                        supérieure à des prix compétitifs.
-
-                        Notre personnel amical et compétent est là pour vous aider à trouver les outils dont vous avez
-                        besoin et répondre à toutes vos questions. Nous sommes déterminés à fournir un excellent
-                        service client et à vous aider à réussir votre projet.
-
-                        Venez nous rendre visite aujourd’hui et découvrez pourquoi nous sommes la
-                        quincaillerie préférée des habitants de Lubumbashi
-
-
-                        */
-                    @endphp
-
 
                 </div>
             </div>
