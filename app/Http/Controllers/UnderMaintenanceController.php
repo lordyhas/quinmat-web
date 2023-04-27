@@ -10,8 +10,8 @@ class UnderMaintenanceController extends Controller
 {
     //
 
-    public function index(string $lang): View
+    public function index(): View
     {
-        return view('comingsoon', ['app_x'=> new AppConstant(),"lang"=>$lang]);
+        return view('comingsoon', ['app_x'=> new AppConstant()]);
     }
 }

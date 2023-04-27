@@ -1,6 +1,5 @@
-@extends('home')
 
-@section('news')
+
     <div @class(['py-3'])></div>
     <div class="container">
         <h6 class="section-title mb-5 text-center">News et Events</h6>
@@ -92,4 +91,3 @@
             </div>
         </div>
     @endif
-@endsection

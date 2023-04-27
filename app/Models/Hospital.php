@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @mixin IdeHelperDoctorContact
+ * @mixin IdeHelperHospital
  */
-class DoctorContact extends Model
+class Hospital extends Model
 {
     use HasFactory;
 }

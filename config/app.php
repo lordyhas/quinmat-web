@@ -33,6 +33,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'QUINMAT'),
+    'is_under_maintenance' => false,
+
     'app_constant' => new AppConstant(),
 
     'mail' => (new AppConstant())->mail,

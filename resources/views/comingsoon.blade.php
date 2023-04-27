@@ -100,8 +100,6 @@
 					</div>
 				</div>
 			</div>
-
-
 			<p class="m2-txt1 txt-center p-b-48 p-t-42 ">
 				<b>
 					Tel : +248 000 000 258 <br>
@@ -109,8 +107,6 @@
 					www.quinmat.com
 				</b>
 			</p>
-
-
 		</div>
 	</div>
 
@@ -132,23 +128,39 @@
 	<script src="assets/vendors/countdowntime/countdowntime.js"></script>
 
     <?php
-    /*
-    $start_date = new DateTime('2023-04-01');
-    $end_date = new DateTime('2023-04-04');
-    $diff = $end_date->diff($start_date);
-    echo $diff->format('<h1>%a days, %h hours, %i minutes, %s seconds</h1>'); */
+
+    $first_date = strtotime("2023-05-02 17:03:30");
+    $second_date = strtotime("2023-04-25 00:00:00");
+
+    $difference = abs($second_date - $first_date);
+
+    $days = floor($difference / (60*60*24));
+    $hours = floor($difference / (60 * 60 * 24) % 24);
+    $minutes = floor($hours / (60 * 60 * 24) % 60);
+
+    //echo $days;
     ?>
+
 
 	<script>
 
-		const now = new Date("2023-04-11T10:30:15"); //Date(2023, 4, 11, 12, 30, 0); //Date('4/11/2023');
-		const endDate = new Date();
+		const now = new Date();
+		const endDate = new Date("2023-05-02T10:30:15"); //Date(2023, 4, 11, 12, 30, 0); //Date('4/11/2023');
 		const diffTime = Math.abs(endDate - now);
 
-		const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+		/*const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 		const diffHours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
 		const diffMinutes = Math.floor((diffTime / (1000 * 60)) % 60);
-		const diffSeconds = Math.floor((diffTime / 1000) % 60);
+		const diffSeconds = Math.floor((diffTime / 1000) % 60);*/
+
+
+        const diffDays = {{$days}};
+        const diffHours = {{$hours}};
+        const diffMinutes = {{$minutes}};
+        const diffSeconds = {{00}};
+
+
+
 
 		$('.cd100').countdown100({
 			/*Set Endtime here*/

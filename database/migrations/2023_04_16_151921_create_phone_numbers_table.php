@@ -16,7 +16,8 @@ return new class extends Migration
             $table->id();
             $table->string('phone_number')->unique();
             $table->unsignedBigInteger('doctor_id');
-            $table->foreign('doctor_id')->references('id')->on('doctor_contacts');
+            $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->boolean("verified")->default(false);
             $table->dateTime("last_update")->default(date('Y-m-d H:i:s'));
             $table->timestamps();
         });

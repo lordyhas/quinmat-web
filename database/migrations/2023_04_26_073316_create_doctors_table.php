@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('doctor_contacts', function (Blueprint $table) {
+        Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string("first_name")->nullable();
             $table->string("middle_name")->nullable();
             $table->string("last_name")->nullable();
-            $table->string("hospital")->nullable();
-            $table->string("location")->nullable();
+            $table->string("sex");
+            $table->string("hospital");
+            $table->unsignedBigInteger("hospital_id")->nullable();
+            $table->foreign('hospital_id')->references('id')->on('hospitals');
+            $table->string("location");
             $table->string("speciality")->nullable();
             $table->boolean("is_doctor")->default(false);
             $table->dateTime("last_update")->default(date('Y-m-d H:i:s'));
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('doctor_contacts');
+        Schema::dropIfExists('doctors');
     }
 };

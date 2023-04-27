@@ -3,15 +3,15 @@ Powered by QUINMAT SARL.
 Developed by QUINMAT TEAM.
 Directed by Hassan Kajila.
 -->
-@php $app_x = config('app.app_constant'); @endphp
-<!DOCTYPE html>
+@php $app_x = $appX = config('app.app_constant'); @endphp
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Portfolio of QUINMAT">
     <meta name="author" content="lordyhas">
-    <title> {{$app_x->name}} | Accueil </title>
+    <title> {{$appX->name}} | Accueil </title>
 
     <link rel="icon" type="image/png" href="{{asset("assets/favicon.ico")}} "/>
 
@@ -78,8 +78,8 @@ Directed by Hassan Kajila.
 <!-- Page Header -->
 <header class="header">
     <div class="overlay">
-        <h6 class="subtitle">...</h6>
-        <h1 class="title">{{$app_x->name}} SARL</h1>
+        <h6 class="subtitle">@yield('preview')...</h6>
+        <h1 class="title">{{$app_x->name}}</h1>
         <div class="buttons text-center">
             <a href="#service" class="btn btn-primary rounded w-lg btn-lg my-1">Nos Services</a>
             <a href="#contact" class="btn btn-outline-light rounded w-lg btn-lg my-1">Contactez-Nous</a>
@@ -247,7 +247,7 @@ Directed by Hassan Kajila.
                         <p> QUINMAT vous propose un large assortiment de produits de quincaillerie,
                             allant des outils aux matériaux de construction, en passant par les peintures et les
                             accessoires.
-                            </br>...
+                            <br>...
                         </p>
                     </div>
                 </div>
@@ -276,7 +276,7 @@ Directed by Hassan Kajila.
                             QUINMAT vous accompagne dans votre domaine de santé avec du matériel médical
                             de qualité. Trouvez du matériel de diagnostic, de soin, de chirurgie, de laboratoire
                             et de radiologie. Bénéficiez également d’un service d’installation et de maintenance.
-                            </br>...
+                            <br>...
                         </p>
                     </div>
                 </div>
@@ -286,7 +286,7 @@ Directed by Hassan Kajila.
                     <div class="card-body">
                         <img src="{{asset('assets/imgs/quinmat-logo-mob.jpg')}}" alt="">
                         <h5 class="card-title text-primary">Mobilier</h5>
-                        @yield('products')
+
                         <p>
                             QUINMAT vous propose des meubles adaptés à vos espaces de vie et de travail.
                             Choisissez des meubles de bureau, des chaises, des tables, des armoires,
@@ -534,11 +534,11 @@ Directed by Hassan Kajila.
             <div class="widget-item">
                 <i class="ti-face-smile"></i>
                 <h6 class="title">34K+</h6>
-                <div class="subtitle">Happy Clients</div>
+                <div class="subtitle">Clients Content</div>
             </div>
             <div class="widget-item">
                 <i class="ti-blackboard"></i>
-                <h6 class="title">1845+</h6>
+                <h6 class="title">7845+</h6>
                 <div class="subtitle">Produits</div>
             </div>
             <div class="widget-item">
@@ -621,20 +621,28 @@ Directed by Hassan Kajila.
 
                 </h4>
                 <div class="py-2"></div>
-                <div class="row">
-                    <div class="col-md-6 mb-2">
-                        <div class="">
-                            <input type="email" class="form-control rounded" id="" placeholder="Email address">
+
+                <form method="post" action="{{route('newsletter')}}">
+                    @csrf
+                    @method('post')
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <div class="">
+                                <label for=""></label>
+                                <input type="email" name="email" class="form-control rounded" id="emailNewsletterId"
+                                       placeholder="Email address">
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label for=""></label>
+                            <button type="submit" class="btn btn-outline-primary btn-lg w-lg"
+                                    @if(session('newsletter')) disabled @endif>
+                                S'abonner
+                            </button>
                         </div>
                     </div>
-                    <div class="col-md-3 mb-2">
-                        <button class="btn btn-outline-primary btn-lg w-lg ">
+                </form>
 
-                                S'abonner
-
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="py-5"></div>
@@ -779,7 +787,11 @@ Directed by Hassan Kajila.
             </div>
         </div>
     </div>
-    @yield('news')
+    @if(\Illuminate\Support\Facades\Request::input("test") or true)
+        @include('section.news-even-cat')
+    @endif
+
+
 </section>
 <!-- End of Blog Section -->
 
@@ -825,24 +837,27 @@ Directed by Hassan Kajila.
 
             </div>
             <div class="form">
+
                 <h6 class="section-subtitle">Disponible 24/7</h6>
                 <h6 class="section-title mb-4">Entrer en contact</h6>
-                <form>
+                <form method="post" action="{{route("contact_message")}}">
+                    @csrf
+                    @method('post')
                     <div class="form-group">
                         <label for="exampleInputEmail1"></label>
-                        <input type="email" class="form-control form-control-lg" id="exampleInputEmail1"
+                        <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1"
                                aria-describedby="emailHelp" placeholder="Entrer votre email" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1"></label>
-                        <input type="text" class="form-control form-control-lg" id="exampleInputPassword1"
+                        <input type="text" name="name" class="form-control form-control-lg" id="exampleInputPassword1"
                                placeholder="Entrer votre nom" required>
                     </div>
                     <div class="form-group">
-                        <label for="contactMessage">
-
-                        </label><textarea name="contact-message" id="contactMessage" cols="30" rows="7"
-                                          class="form-control form-control-lg" placeholder="Message"></textarea>
+                        <label for="contactMessage"></label>
+                        <textarea name="message" id="contactMessage" cols="30" rows="7"
+                                  class="form-control form-control-lg" placeholder="Message">
+                        </textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block btn-lg mt-3">Send Message</button>
                 </form>

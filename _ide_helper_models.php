@@ -12,36 +12,40 @@
 
 namespace App\Models{
 /**
- * App\Models\DoctorContact
+ * App\Models\Doctor
  *
  * @property int $id
  * @property string|null $first_name
  * @property string|null $middle_name
  * @property string|null $last_name
- * @property string|null $hospital
- * @property string|null $location
+ * @property string $sex
+ * @property string $hospital
+ * @property int|null $hospital_id
+ * @property string $location
  * @property string|null $speciality
  * @property int $is_doctor
  * @property string $last_update
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact query()
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereFirstName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereHospital($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereIsDoctor($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereLastName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereLastUpdate($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereLocation($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereMiddleName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereSpeciality($value)
- * @method static \Illuminate\Database\Eloquent\Builder|DoctorContact whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereHospital($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereHospitalId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereIsDoctor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereLastUpdate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereLocation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereMiddleName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereSex($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereSpeciality($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-	class IdeHelperDoctorContact {}
+	class IdeHelperDoctor {}
 }
 
 namespace App\Models{
@@ -51,6 +55,7 @@ namespace App\Models{
  * @property int $id
  * @property string $email
  * @property int $doctor_id
+ * @property int $verified
  * @property string $last_update
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -63,9 +68,42 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereLastUpdate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|EmailAddress whereVerified($value)
  * @mixin \Eloquent
  */
 	class IdeHelperEmailAddress {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Hospital
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $phone_numbers
+ * @property string|null $emergency _call
+ * @property string|null $email
+ * @property int $email_verified
+ * @property string $location
+ * @property string|null $address
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereEmailVerified($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereEmergencyCall($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereLocation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital wherePhoneNumbers($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
+	class IdeHelperHospital {}
 }
 
 namespace App\Models{
@@ -137,6 +175,7 @@ namespace App\Models{
  * @property int $id
  * @property string $phone_number
  * @property int $doctor_id
+ * @property int $verified
  * @property string $last_update
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -149,6 +188,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereLastUpdate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber wherePhoneNumber($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PhoneNumber whereVerified($value)
  * @mixin \Eloquent
  */
 	class IdeHelperPhoneNumber {}
