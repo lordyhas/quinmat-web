@@ -83,9 +83,6 @@ if ($is_not_under_maintenance):
 
             });
 
-
-
-
             require __DIR__ . '/blog_routes.php';
 
             Route::get('/welcome', function () {
