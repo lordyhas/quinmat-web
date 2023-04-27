@@ -36,9 +36,9 @@ class OnlineNewsletterController extends Controller
 
     public function delete(Request $request) : View | RedirectResponse
     {
+        //todo: create a blade for unsubscribe
         if(!$request->has('unsubscribe') and !$request->has('email'))
              abort(404); //Redirect::route('home.index',['unsubscribe'=>"null"]);
-
         return view("newsletter.unsubscribe");  //Redirect::route('home.index', ['q'=>'none']);
     }
 }

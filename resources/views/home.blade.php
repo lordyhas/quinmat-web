@@ -9,7 +9,7 @@ Directed by Hassan Kajila.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Portfolio of QUINMAT">
+    <meta name="description" content="Official Website of QUINMAT SARL">
     <meta name="author" content="lordyhas">
     <title> {{$appX->name}} | Accueil </title>
 
@@ -19,8 +19,8 @@ Directed by Hassan Kajila.
     <link rel="stylesheet" href="{{asset('assets/vendors/themify-icons/css/themify-icons.css')}} ">
 
 
-    <!-- Bootstrap + Creative Studio main styles -->
-    <!-- link rel="stylesheet" href="assets/css/creative-studio.css"-->
+    <!-- Bootstrap + main styles -->
+
     <!-- { {asset('')} } -->
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -54,12 +54,16 @@ Directed by Hassan Kajila.
                 <li class="nav-item">
                     <a class="nav-link" href="#products">Produit</a>
                 </li>
+                @php/*
+
                 <!-- li class="nav-item">
                     <a class="nav-link" href="#team">Team</a>
                 </li -->
                 <!-- li class="nav-item">
                     <a class="nav-link" href="#testimonial">Comments</a>
                 </li -->
+                */@endphp
+
                 <li class="nav-item">
                     <a class="nav-link" href="#blog">Blog</a>
                 </li>
@@ -117,10 +121,6 @@ Directed by Hassan Kajila.
     <div class="box-item">
         <i class="ti-wheelchair"></i> <!-- ti-vector -->
         <h6 class="box-title">Équipement Médical</h6>
-        <!-- p> Les équipements médicaux, y compris des lits d’hôpitaux, des fauteuils roulants et des béquilles.
-
-            Images et Instruments - Imageries - Mobilier Médical - Matériel de diagnostic - Maintenance.
-        </p-->
         <p>
             Fournit des équipements médicaux tels que des lits d’hôpitaux, des fauteuils roulants et des matériels de
             diagnostic.
@@ -155,6 +155,8 @@ Directed by Hassan Kajila.
                     supérieure à des prix compétitifs.
                 </p>
 
+                @php/*
+
                 <!-- p>
                     Notre quincaillerie offre une large gamme de produits pour les professionnels et les
                     particuliers, y compris des outils électriques et manuels, des matériaux de construction et des
@@ -169,6 +171,8 @@ Directed by Hassan Kajila.
                     Enfin, notre service d’équipement mobilier propose une large gamme de meubles pour la maison
                     et le bureau.
                 </p -->
+                */@endphp
+
 
                 <p>
                     Nous sommes fiers de servir nos clients avec les meilleurs produits et services possibles.
@@ -207,8 +211,8 @@ Directed by Hassan Kajila.
     </div>
 </section>
 <!-- End Of About Sectoin -->
-
-<!-- div class="row">
+@php/*
+   <!-- div class="row">
     Quincaillerie : QUINMAT vous propose un large assortiment de produits de quincaillerie,
     allant des outils aux matériaux de construction, en passant par les peintures et les accessoires.
 
@@ -233,7 +237,10 @@ Directed by Hassan Kajila.
     </ul>
 </div -->
 
-<!-- Service Section -->
+        */@endphp
+
+
+    <!-- Service Section -->
 <section id="service">
     <div class="container text-center">
         <h6 class="section-subtitle text-center">Faire Advenir</h6>
@@ -303,8 +310,6 @@ Directed by Hassan Kajila.
 <!-- End of Service Section -->
 
 <!-- Product section -->
-
-
 <section id="products">
     <div class="container text-center">
         <h6 class="section-subtitle">Our Awesome Works</h6>
@@ -411,113 +416,6 @@ Directed by Hassan Kajila.
 </section>
 <!-- End of products section -->
 
-<!-- Team Section -->
-<!-- section id="team">
-    <div class="container">
-        <h6 class="section-subtitle text-center">Meet With</h6>
-        <h6 class="section-title mb-5 text-center">Our Angels</h6>
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-center mb-4">
-                    <img class="card-img-top inset" src="assets/imgs/avatar.jpg">
-                    <div class="card-body">
-                        <h6 class="small text-primary font-weight-bold">FOUNDER</h6>
-                        <h5 class="card-title">Matthew Davis</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                        <div class="socials">
-                            <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                            <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-center mb-4">
-                    <img class="card-img-top inset" src="assets/imgs/avatar-1.jpg">
-                    <div class="card-body">
-                        <h6 class="small text-primary font-weight-bold">CEO</h6>
-                        <h5 class="card-title">Barbara Ross</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                        <div class="socials">
-                            <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                            <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-center mb-4">
-                    <img class="card-img-top inset" src="assets/imgs/avatar-2.jpg">
-                    <div class="card-body">
-                        <h6 class="small text-primary font-weight-bold">Designer</h6>
-                        <h5 class="card-title">Karen Perry</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                        <div class="socials">
-                            <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                            <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-center mb-4">
-                    <img class="card-img-top inset" src="assets/imgs/avatar-3.jpg">
-                    <div class="card-body">
-                        <h6 class="small text-primary font-weight-bold">App Designer</h6>
-                        <h5 class="card-title">Ashley Diaz</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                        <div class="socials">
-                            <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                            <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-center mb-4">
-                    <img class="card-img-top inset" src="assets/imgs/avatar-4.jpg">
-                    <div class="card-body">
-                        <h6 class="small text-primary font-weight-bold">Developer</h6>
-                        <h5 class="card-title">Edward Harris</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                        <div class="socials">
-                            <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                            <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="card text-center mb-4">
-                    <img class="card-img-top inset" src="assets/imgs/avatar-5.jpg">
-                    <div class="card-body">
-                        <h6 class="small text-primary font-weight-bold">photographer</h6>
-                        <h5 class="card-title">Brian Scott</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quos esse tenetur illo qui, nostrum.</p>
-                        <div class="socials">
-                            <a href="javascript:void(0)"><i class="ti-facebook"></i> </a>
-                            <a href="javascript:void(0)"><i class="ti-github"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-dropbox"></i></a>
-                            <a href="javascript:void(0)"><i class="ti-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section -->
-<!-- End of Team Sectoin -->
 
 <!-- Fatcs Section -->
 <!-- We Are Awesome | Some Fun Fucts -->
@@ -553,7 +451,9 @@ Directed by Hassan Kajila.
 <!-- Subscription Section -->
 <section id="subscription">
     <div class="container">
-        <!--
+
+        @php/*
+           <!--
         <h6 class="section-subtitle text-center">Commentaires</h6>
         <h6 class="section-title text-center mb-6">Ce que nos clients disent</h6>
 
@@ -609,6 +509,9 @@ Directed by Hassan Kajila.
 
             Tenez-vous au courant des nouvelles offres, sorties et plus de QUINMAT
             -->
+
+        */@endphp
+
         <div class="py-5"></div>
         <div class="row">
             <div class="col-md-6">
@@ -701,20 +604,26 @@ Directed by Hassan Kajila.
                             la santé, y compris des lits d’hôpitaux, des fauteuils roulants, des équipements
                             de diagnostic... <br>.
                         </p>
+                        @php
+                            /*
+                             <!--
 
-                        <!--
+                            Notre entreprise fournit une large gamme d’équipements médicaux pour les professionnels de
+                            la santé, y compris des lits d’hôpitaux, des fauteuils roulants et des équipements
+                            de diagnostic.
 
-                        Notre entreprise fournit une large gamme d’équipements médicaux pour les professionnels de
-                        la santé, y compris des lits d’hôpitaux, des fauteuils roulants et des équipements
-                        de diagnostic.
+                            Nous sommes fiers de fournir des produits de qualité à nos clients depuis plusieurs années
+                            et nous sommes déterminés à offrir les meilleurs services possibles.
 
-                        Nous sommes fiers de fournir des produits de qualité à nos clients depuis plusieurs années
-                        et nous sommes déterminés à offrir les meilleurs services possibles.
+                            Nous offrons également des services d’installation et de maintenance pour tous nos produits.
 
-                        Nous offrons également des services d’installation et de maintenance pour tous nos produits.
+                            Nous sommes fiers de servir nos clients avec les meilleurs produits et services possibles
+                            -->
 
-                        Nous sommes fiers de servir nos clients avec les meilleurs produits et services possibles
-                        -->
+                            */
+                        @endphp
+
+
                         <a href="javascript:void(0)" class="d-block mt-3">Read More...</a>
                     </div>
                 </div>
@@ -734,16 +643,23 @@ Directed by Hassan Kajila.
                             qualité à nos clients depuis plusieurs années...
                         </p>
 
-                        <!--
-                            Notre papeterie propose une grande variété de fournitures de bureau, y compris des
-                            stylos, des cahiers et des enveloppes. Nous sommes fiers de fournir des produits de
-                            qualité à nos clients depuis plusieurs années
+                        @php
+                            /*
+                            <!--
+                                Notre papeterie propose une grande variété de fournitures de bureau, y compris des
+                                stylos, des cahiers et des enveloppes. Nous sommes fiers de fournir des produits de
+                                qualité à nos clients depuis plusieurs années
 
-                            Nous offrons également des services d’impression pour les entreprises et les
-                            particuliers, y compris l’impression de cartes de visite, de brochures et de dépliants.
+                                Nous offrons également des services d’impression pour les entreprises et les
+                                particuliers, y compris l’impression de cartes de visite, de brochures et de dépliants.
 
-                            Nous sommes fiers de servir nos clients avec les meilleurs produits et services
-                            possibles. -->
+                                Nous sommes fiers de servir nos clients avec les meilleurs produits et services
+                                possibles.
+                            -->
+
+                            */
+                        @endphp
+
 
                         <a href="javascript:void(0)" class="d-block mt-3">Read More...</a>
                     </div>
@@ -766,23 +682,29 @@ Directed by Hassan Kajila.
                         <a href="javascript:void(0)" class="d-block mt-3">Read More...</a>
                     </div>
 
-                    <!--
-                    Vous cherchez des outils de qualité pour vos projets de construction ou de rénovation ?
-                    Ne cherchez plus ! Chez QUINMAT, nous avons tout ce dont vous avez besoin pour mener à
-                    bien votre projet.
+                    @php
+                        /*
 
-                    Nous offrons une large gamme d’outils et d’équipements pour tous les types de projets,
-                    des plus petits aux plus grands. Nous sommes fiers de fournir des produits de qualité
-                    supérieure à des prix compétitifs.
+                        Vous cherchez des outils de qualité pour vos projets de construction ou de rénovation ?
+                        Ne cherchez plus ! Chez QUINMAT, nous avons tout ce dont vous avez besoin pour mener à
+                        bien votre projet.
 
-                    Notre personnel amical et compétent est là pour vous aider à trouver les outils dont vous avez
-                    besoin et répondre à toutes vos questions. Nous sommes déterminés à fournir un excellent
-                    service client et à vous aider à réussir votre projet.
+                        Nous offrons une large gamme d’outils et d’équipements pour tous les types de projets,
+                        des plus petits aux plus grands. Nous sommes fiers de fournir des produits de qualité
+                        supérieure à des prix compétitifs.
 
-                    Venez nous rendre visite aujourd’hui et découvrez pourquoi nous sommes la
-                    quincaillerie préférée des habitants de Lubumbashi
+                        Notre personnel amical et compétent est là pour vous aider à trouver les outils dont vous avez
+                        besoin et répondre à toutes vos questions. Nous sommes déterminés à fournir un excellent
+                        service client et à vous aider à réussir votre projet.
 
-                    -->
+                        Venez nous rendre visite aujourd’hui et découvrez pourquoi nous sommes la
+                        quincaillerie préférée des habitants de Lubumbashi
+
+
+                        */
+                    @endphp
+
+
                 </div>
             </div>
         </div>
@@ -790,7 +712,6 @@ Directed by Hassan Kajila.
     @if(\Illuminate\Support\Facades\Request::input("test") or true)
         @include('section.news-even-cat')
     @endif
-
 
 </section>
 <!-- End of Blog Section -->
