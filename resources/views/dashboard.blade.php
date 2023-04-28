@@ -31,7 +31,7 @@
                              src="{{asset("assets/imgs/avatar_1.png")}}" alt="profile images">
                     </div>
                     <div class="mb-3 mt-3 text-gray-900 dark:text-gray-100">
-                        {{ Auth::user()->first_name ." ". Auth::user()->name }} <br>
+                        {{Auth::user()->first_name ." ". Auth::user()->name}} <br>
                         {{Auth::user()->email}}
                     </div>
                     <hr>
@@ -46,7 +46,6 @@
                             Pour des raisons de sécurité, sans les autorisations nécessaires,
                             ce compte sera automatiquement supprimé dans les 24 heures qui suivent.
                         </div>
-
                     @endif
 
 

@@ -33,10 +33,11 @@ return [
     */
 
     'name' => env('APP_NAME', 'QUINMAT'),
-    'version' => env('APP_VERSION', 'QUINMAT'),
+    'version' => env('APP_VERSION', '0.0.11+0'),
     'is_under_maintenance' => false,
 
     'app_constant' => new AppConstant(),
+    'utils' => new AppConstant(),
 
     'mail' => (new AppConstant())->mail,
     'contact' => (new AppConstant())->contact,
@@ -124,7 +125,16 @@ return [
     */
     'available_locales' => [
         'English' => 'en',
-        'French' => 'fr',
+        'Français' => 'fr',
+    ],
+
+    'available_opposite_locales' => [
+        'fr' => 'English',
+        'en' => 'Français',
+    ],
+    'available_key_locales' => [
+        'en' => 'English',
+        'fr' => 'Français',
     ],
 
     /*
@@ -247,7 +257,7 @@ return [
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | the aliases are "lazy" loaded, so they don't hinder performance.
     |
     */
 

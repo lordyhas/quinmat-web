@@ -29,7 +29,7 @@ Directed by Hassan Kajila.
 <!-- Page Navigation -->
 <nav class="navbar custom-navbar navbar-expand-lg navbar-dark" data-spy="affix" data-offset-top="20">
     <div class="container">
-        <a class="navbar-brand" href="{{route("home.index", ["lang"=>"fr"])}}">
+        <a class="navbar-brand" href="{{route("home.index")}}">
             <img src="{{asset('assets/imgs/logo.png')}}" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -41,36 +41,40 @@ Directed by Hassan Kajila.
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Accueil</a>
+                    <a class="nav-link" href="#home">{{__("Accueil")}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">À propos</a>
+                    <a class="nav-link" href="#about">{{__("À propos")}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#service">Service</a>
+                    <a class="nav-link" href="#service">{{__("Service")}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#products">Produit</a>
+                    <a class="nav-link" href="#products">{{__("Produit")}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#blog">Blog</a>
+                    <a class="nav-link" href="#blog">{{__("Blog")}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-primary btn-sm ml-lg-3" href="en-home.html">English</a>
+                    <a class="nav-link btn btn-primary btn-sm ml-lg-3" href="{{route("home.index", ["lang"=>"en"])}}">
+                        {{config('app.available_opposite_locales')[app()->getLocale()]}}
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-
 <!-- Page Header -->
 <header class="header">
     <div class="overlay">
-        <h6 class="subtitle">@yield('preview')...</h6>
+        <h6 class="subtitle">
+            @yield('preview')
+            ...
+        </h6>
         <h1 class="title">{{$app_x->name}}</h1>
         <div class="buttons text-center">
             <a href="#service" class="btn btn-primary rounded w-lg btn-lg my-1">Nos Services</a>
@@ -122,7 +126,7 @@ Directed by Hassan Kajila.
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-4">
-                <img src="{{asset('assets/imgs/quin-vector.jpg')}}" alt="" class="w-100 img-thumbnail mb-3">
+                <img src="{{asset('assets/imgs/quinmat-vector.jpg')}}" alt="" class="w-100 img-thumbnail mb-3">
             </div>
             <div class="col-md-7 col-lg-8">
                 <h6 class="section-subtitle mb-0">QUINMAT S.A.R.L</h6>
@@ -251,7 +255,7 @@ Directed by Hassan Kajila.
         <div class="row">
             <div class="col-sm-4">
                 <div class="card img-wrapper">
-                    <img src="{{asset("assets/images/slides/Slide8.PNG")}}" alt="">
+                    <img src="{{asset("assets/images/slides/Slide3R.jpg")}}" alt="">
                     <div class="overlay">
                         <div class="overlay-infos">
                             <h5>Quincaillerie</h5>
@@ -284,7 +288,7 @@ Directed by Hassan Kajila.
                     </div>
                 </div>
                 <div class="card img-wrapper">
-                    <img src="{{asset("assets/images/slides/Slide18.PNG")}}" alt="">
+                    <img src="{{asset("assets/images/slides/Slide18.jpg")}}" alt="">
                     <div class="overlay">
                         <div class="overlay-infos">
                             <h5>Medical</h5>
@@ -332,7 +336,7 @@ Directed by Hassan Kajila.
             <div class="col">
                 <div class="card img-wrapper mb-4">
                     <div class="card-body">
-                        <img src="{{asset("assets/images/slides/Slide15.PNG")}}" alt="">
+                        <img src="{{asset("assets/images/slides/Slide15.jpg")}}" alt="">
                     </div>
                 </div>
             </div>
@@ -341,7 +345,7 @@ Directed by Hassan Kajila.
             <div class="col">
                 <div class="card img-wrapper mb-4">
                     <div class="card-body">
-                        <img src="{{asset("assets/images/slides/Slide19.PNG")}}" alt="">
+                        <img src="{{asset("assets/images/slides/Slide19.jpg")}}" alt="">
                     </div>
                 </div>
             </div>
@@ -394,8 +398,8 @@ Directed by Hassan Kajila.
             </div>
 
             <div class="col-md-6">
-                <h4> En plus, vous serez les premiers à découvrir nos nouveautés, nos promotions et nos conseils.
-
+                <h4>
+                    En plus, vous serez les premiers à découvrir nos nouveautés, nos promotions et nos conseils.
                 </h4>
                 <div class="py-2"></div>
 
@@ -438,7 +442,6 @@ Directed by Hassan Kajila.
             <i class="ti-control-play"></i>
         </button>
         <h6 class="section-title mt-4">Voir notre video d'intro</h6>
-
     </div>
 </section>
 <!-- End of Video Section -->
@@ -472,7 +475,7 @@ Directed by Hassan Kajila.
                             <a href="javascript:void(0)"><i class="ti-comments"></i> 123</a>
                             <a href="javascript:void(0)"><i class="ti-eye"></i> 123</a>
                         </div>
-                        <h5 class="card-title">MEDICAL EQUIPEMENT</h5>
+                        <h5 class="card-title">MEDICAL EQUIPMENT</h5>
                         <p>
                             Notre entreprise fournit une large gamme d’équipements médicaux pour les professionnels de
                             la santé, y compris des lits d’hôpitaux, des fauteuils roulants, des équipements
@@ -523,7 +526,7 @@ Directed by Hassan Kajila.
             </div>
         </div>
     </div>
-    @if(\Illuminate\Support\Facades\Request::input("test") or true)
+    @if(\Illuminate\Support\Facades\Request::input("test") === '001')
         @include('section.news-even-cat')
     @endif
 

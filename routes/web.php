@@ -25,32 +25,28 @@ use League\Csv\Reader;
 |
 */
 
+if (config('app.is_under_maintenance') === false):
 
-$is_not_under_maintenance = !((new WebsiteState())->is_under_maintenance() ?? false);
+    if (config('app.debug')):
 
-if ($is_not_under_maintenance):
+        Route::get('/csv', function () {
+            $csv = Reader::createFromPath(storage_path('app/data_doctor.csv'));
+            $csv->setHeaderOffset(0);
+            $records = $csv->getRecords();
+            $data = [];
+            foreach ($records as $record) {
+                // Do something with the record
+                // You can access the fields using the named keys
+                $data[] = $record;
+            }
+            return $data; //iterator_to_array($records);
 
-    //Route::redirect("/", "/home");
+        });
+        require __DIR__ . '/test_routes.php';
+    endif;
 
     Route::get('/', function () {
         return Redirect::route("home.index", ["lang" => "fr"]);
-    });
-
-    Route::get('/csv', function () {
-        $csv = Reader::createFromPath(storage_path('app/data_doctor.csv'));
-        $csv->setHeaderOffset(0);
-        $records = $csv->getRecords();
-        $data = [];
-        foreach ($records as $record) {
-            // Do something with the record
-            // You can access the fields using the named keys
-            $data[] = $record;
-        }
-
-        //dd($csv);
-
-        return $data; //iterator_to_array($records);
-
     });
 
     Route::prefix('{lang?}')
@@ -61,7 +57,7 @@ if ($is_not_under_maintenance):
                 //Session::put('applocale', $locale);
             }*/
 
-            Route::prefix('/home')->group(function (){
+            Route::prefix('/home')->group(function () {
                 Route::controller(HomeController::class)->group(function () {
                     Route::get('/', 'index')->name('home.index');
                     Route::get('/preview/{test}', 'preview')
@@ -70,20 +66,19 @@ if ($is_not_under_maintenance):
                 });
 
                 Route::prefix('/newsletter')
-                    ->controller(OnlineNewsletterController::class)->group(function (){
-                    Route::post('/', 'store')->name('newsletter');
-                    Route::get('/unsubscribe', 'delete')->name('newsletter.delete');
-                });
+                    ->controller(OnlineNewsletterController::class)->group(function () {
+                        Route::post('/', 'store')->name('newsletter');
+                        Route::get('/unsubscribe', 'delete')->name('newsletter.delete');
+                    });
 
                 Route::prefix('/contact/message')
-                    ->controller(OnlineMessages::class)->group(function (){
-                    Route::post('/', 'create')->name('contact_message');
-                    Route::post('/delete', 'delete')->name('contact_message.delete');
-                });
+                    ->controller(OnlineMessages::class)->group(function () {
+                        Route::post('/', 'create')->name('contact_message');
+                        Route::post('/delete', 'delete')->name('contact_message.delete');
+                    });
 
             });
 
-            require __DIR__ . '/blog_routes.php';
 
             Route::get('/welcome', function () {
                 return view('welcome');
@@ -109,9 +104,11 @@ if ($is_not_under_maintenance):
                     Route::get('/profile', 'edit')->name('profile.edit');
                     Route::patch('/profile', 'update')->name('profile.update');
                     Route::delete('/profile', 'destroy')->name('profile.destroy');
-                });
+            });
 
             require __DIR__ . '/auth.php';
+            require __DIR__ . '/blog_routes.php';
+
         });
 
     Route::controller(DoctorController::class)->group(function () {
@@ -120,10 +117,6 @@ if ($is_not_under_maintenance):
         Route::get('/doctor_save', 'store')->name("doctor.store");
         Route::get('/doctor_get', 'show')->name("doctor.show");
     });
-
-    if(config('app.debug')):
-        require __DIR__ . '/test_routes.php';
-    endif;
 
 else:
     Route::get('/', [UnderMaintenanceController::class, 'index']);
