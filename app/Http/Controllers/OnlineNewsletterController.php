@@ -26,7 +26,8 @@ class OnlineNewsletterController extends Controller
         $newsletter->email = $email;
         $newsletter->save();
 
-        $request->session()->put('newsletter', false);
+        $request->session()->put('newsletter', true);
+
         return Redirect::route('home.index', [
             'newsletter'=>'done',
             'q'=>"saved",

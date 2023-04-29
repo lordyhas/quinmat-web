@@ -25,14 +25,15 @@ class OnlineMessageController extends Controller
             $omsg->message = $message;
             $omsg->save();
 
-
-
             return Redirect::route('home.index', [
                 'name' => $name,
                 'email' => $email,
             ]);
         }
 
-        return Redirect::back();
+        return Redirect::back()->with([
+            'message' => 'failed',
+            'email' => 'null',
+        ]);
     }
 }
