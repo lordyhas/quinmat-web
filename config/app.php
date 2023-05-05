@@ -1,23 +1,9 @@
 <?php
 
+use App\Manifest\AppConstants as AppConstant;
 use Illuminate\Support\Facades\Facade;
 
-class AppConstant
-{
-    public string $name = "QUINMAT";
-    public string $mail = "info@quinmat.com";
-    public string $contact = "(+243) 824 130 000";
-    //public string $number = $contact;
-    public string $address = "650 Avenue Moëro, Lubumbashi";
-    public string $country = "République Démocratique du Congo";
-    public string $country_short = "Congo-Kinshasa";
-    public string $country_sigle = "RDC";
-    public string $facebook = "https://web.facebook.com/Quinmatlshi/";
-    public string $instagram = "https://www.instagram.com/";
-    public string $twitter = "https://twitter.com/QuinmatS";
-    public string $linkedin = "https://www.linkedin.com/";
 
-}
 
 return [
 

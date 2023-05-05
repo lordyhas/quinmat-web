@@ -3,7 +3,7 @@ Powered by QUINMAT SARL.
 Developed by QUINMAT TEAM.
 Directed by Hassan Kajila.
 -->
-@php $app_x = $appX = config('app.app_constant'); @endphp
+@php $app_x = $appX = new App\Manifest\AppConstants();@endphp
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -72,10 +72,13 @@ Directed by Hassan Kajila.
 <header class="header">
     <div class="overlay">
         <h6 class="subtitle">
-            @yield('preview')
-            ...
+            @if(\Illuminate\Support\Facades\Request::input("test") === '001')
+                @yield('preview')
+            @else
+                ...
+            @endif
         </h6>
-        <h1 class="title">{{$app_x->name}}</h1>
+        <h1 class="title">{{$appX->getName()}}</h1>
         <div class="buttons text-center">
             <a href="#service" class="btn btn-primary rounded w-lg btn-lg my-1">Nos Services</a>
             <a href="#contact" class="btn btn-outline-light rounded w-lg btn-lg my-1">Contactez-Nous</a>
@@ -551,7 +554,7 @@ Directed by Hassan Kajila.
                     <i class="ti-mobile"></i>
                     <div>
                         <h5>Numéro de téléphone</h5>
-                        <p>(+243) 456-7890</p>
+                        <p>{{$app_x->contact}}</p>
                     </div>
                 </div>
                 <div class="item">
@@ -658,7 +661,8 @@ Directed by Hassan Kajila.
                     </li>
                     <li class="list-body">
                         <p>Contactez-nous et nous vous répondrons dans les 24 heures.</p>
-                        <p><i class="ti-location-pin"></i> {{$app_x->address}}, {{$app_x->country_short}} </p>
+                        <p><i class="ti-location-pin"></i> {{$appX->getAddress()}},
+                            {{$appX->getCountry(type: CountryName::short)}} </p>
 
                         <p><i class="ti-mobile"></i>{{$app_x->contact}}</p>
                         <p><i class="ti-email"></i>{{$app_x->mail}}</p>
@@ -679,7 +683,6 @@ Directed by Hassan Kajila.
 <script src="{{asset('assets/vendors/bootstrap/bootstrap.affix.js')}}"></script>
 
 <!-- main js -->
-
 <script src="{{asset('assets/js/main-script.js')}}"></script>
 
 </body>
