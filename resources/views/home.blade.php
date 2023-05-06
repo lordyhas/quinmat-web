@@ -72,7 +72,7 @@ Directed by Hassan Kajila.
 <header class="header">
     <div class="overlay">
         <h6 class="subtitle">
-            @if(\Illuminate\Support\Facades\Request::input("test") === '001')
+            @if(Request::input("test") === '001')
                 @yield('preview')
             @else
                 ...
@@ -412,7 +412,7 @@ Directed by Hassan Kajila.
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <div class="">
-                                <label for=""></label>
+                                <label for="emailNewsletterId"></label>
                                 <input type="email" name="email" class="form-control rounded" id="emailNewsletterId"
                                        placeholder="Email address">
                             </div>
@@ -529,7 +529,7 @@ Directed by Hassan Kajila.
             </div>
         </div>
     </div>
-    @if(\Illuminate\Support\Facades\Request::input("test") === '001')
+    @if(Request::input("test") === '001')
         @include('section.news-even-cat')
     @endif
 

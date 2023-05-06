@@ -78,21 +78,6 @@ class AppConstants
 
     }
 
-    /**
-     * @return string
-     */
-    public function getCountryShort(): string
-    {
-        return $this->country_short;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCountrySigle(): string
-    {
-        return $this->country_sigle;
-    }
 
     /**
      * @return string
