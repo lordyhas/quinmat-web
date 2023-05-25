@@ -129,7 +129,7 @@ Directed by Hassan Kajila.
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-4">
-                <img src="{{asset('assets/imgs/quinmat-vector.jpg')}}" alt="" class="w-100 img-thumbnail mb-3">
+                <img src="{{asset('assets/imgs/quinmat-bat.jpg')}}" alt="" class="w-100 img-thumbnail mb-3">
             </div>
             <div class="col-md-7 col-lg-8">
                 <h6 class="section-subtitle mb-0">QUINMAT S.A.R.L</h6>
@@ -444,7 +444,7 @@ Directed by Hassan Kajila.
                 data-target="#exampleModalCenter">
             <i class="ti-control-play"></i>
         </button>
-        <h6 class="section-title mt-4">Voir notre video d'intro</h6>
+        <h6 class="section-title mt-4">Voir notre vidéo d'intro</h6>
     </div>
 </section>
 <!-- End of Video Section -->
@@ -662,7 +662,7 @@ Directed by Hassan Kajila.
                     <li class="list-body">
                         <p>Contactez-nous et nous vous répondrons dans les 24 heures.</p>
                         <p><i class="ti-location-pin"></i> {{$appX->getAddress()}},
-                            {{$appX->getCountry(type: CountryName::short)}} </p>
+                            {{$appX->getCountry(type: \App\Manifest\CountryName::short)}} </p>
 
                         <p><i class="ti-mobile"></i>{{$app_x->contact}}</p>
                         <p><i class="ti-email"></i>{{$app_x->mail}}</p>
