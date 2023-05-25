@@ -38,7 +38,9 @@ class OnlineNewsletterController extends Controller
     public function delete(Request $request) : View | RedirectResponse
     {
 
-        if(!$request->has('unsubscribe') and !$request->has('email'))
+        return view("newsletter");
+
+        /*if(!$request->has('unsubscribe') and !$request->has('email'))
              abort(404); //Redirect::route('home.index',['unsubscribe'=>"null"]);
 
         $email = $request->input('email');
@@ -48,6 +50,6 @@ class OnlineNewsletterController extends Controller
         OnlineNewsletter::whereEmail($email)->delete();
 
         $email = $request->input('email');
-        return view("newsletter.unsubscribe",['email'=>$email]);
+        return view("newsletter.unsubscribe",['email'=>$email]);*/
     }
 }
