@@ -31,6 +31,7 @@ class OnlineMessageController extends Controller
             ]);
         }
 
+
         return Redirect::back()->with([
             'message' => 'failed',
             'email' => 'null',

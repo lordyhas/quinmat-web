@@ -5,6 +5,7 @@ require __DIR__ . '/app_constant.php';
 
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OnlineMessageController;
 use App\Http\Controllers\OnlineNewsletterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnderMaintenanceController;
@@ -72,7 +73,7 @@ if (config('app.is_under_maintenance') === false):
                     });
 
                 Route::prefix('/contact/message')
-                    ->controller(OnlineMessages::class)->group(function () {
+                    ->controller(OnlineMessageController::class)->group(function () {
                         Route::post('/', 'create')->name('contact_message');
                         Route::post('/delete', 'delete')->name('contact_message.delete');
                     });
@@ -80,9 +81,7 @@ if (config('app.is_under_maintenance') === false):
             });
 
 
-            Route::get('/welcome', function () {
-                return view('welcome');
-            })->name('welcome');
+            //Route::get('/welcome', function () {return view('welcome');})->name('welcome');
 
             Route::get('/admin', function () {
                 return view('admin');
@@ -90,7 +89,6 @@ if (config('app.is_under_maintenance') === false):
 
             Route::get('/error/{code}', function (string $code) {
                 abort($code);
-                //return view('welcome');
             })->name('error');
 
             Route::get('/dashboard', function () {

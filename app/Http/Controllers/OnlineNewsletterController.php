@@ -10,14 +10,6 @@ use Illuminate\View\View;
 
 class OnlineNewsletterController extends Controller
 {
-    private function message(): string {
-        $str = array(
-            'fr' => array(),
-            'en' => array(""),
-        );
-
-        return "";
-    }
     public function store(Request $request): RedirectResponse
     {
         if (!$request->has('email')) return Redirect::back();
@@ -42,14 +34,11 @@ class OnlineNewsletterController extends Controller
             'q' => "newsletter",
             'message'=>"done",
         ]);
-
     }
 
     public function delete(Request $request): View|RedirectResponse
     {
         /// fr/home/newsletter/unsubscribe
-
-        //return view("newsletter");
 
         if (!$request->has('email')) abort(404);
         //Redirect::route('home.index',['unsubscribe'=>"null"]);
