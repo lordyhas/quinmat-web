@@ -25,6 +25,7 @@ class OnlineNewsletterController extends Controller
 
         $newsletter = new OnlineNewsletter();
         $newsletter->email = $email;
+
         $newsletter->save();
 
         $request->session()->put('newsletter', true);
