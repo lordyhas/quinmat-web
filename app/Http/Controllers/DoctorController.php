@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Doctor;
 use App\Models\EmailAddress;
 use App\Models\PhoneNumber;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use PhpParser\Comment\Doc;
 
 class DoctorController extends Controller
 {
-
-
     public function create(Request $request)
     {
         return;
@@ -25,9 +25,8 @@ class DoctorController extends Controller
         $this->fill_doctor($data, $doctor);
     }
 
-    public function show(Request $request) : array
+    public function show(Request $request) : JsonResponse
     {
-
         $data = [];
         if ($request->has('id')) {
             $doctor_id = $request->input("id");
@@ -46,7 +45,39 @@ class DoctorController extends Controller
                 $data['data'] = $info;
             }
         }
+        return response()->json($data);
+    }
+
+
+    public function readAll() : array
+    {
+        $data =  array();
+        $doctors = Doctor::all();
+
+        foreach ($doctors as $doctor) {
+            $doc = $doctor->toArray();
+
+            $emails = EmailAddress::whereDoctorId($doctor->id);
+            $phones = PhoneNumber::whereDoctorId($doctor->id);
+
+            $doc['phone_numbers'] = $phones;
+            $doc['email_addresses'] = $emails;
+
+            $data[$doctor->id] = $doc;
+
+        }
         return $data;
+    }
+
+
+    public function readOne(Request $request) : JsonResponse
+    {
+        if ($request->has('where')) {
+            $key = $request->input("where");
+            $doctor = Doctor::all()->where($key)->first();
+            return response()->json($doctor->toArray());
+        }
+        return response()->json(["message" => "request has not where parameter"]);
     }
 
     // php artisan make:command ImportCsvData
