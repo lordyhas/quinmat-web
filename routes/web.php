@@ -9,11 +9,9 @@ use App\Http\Controllers\OnlineMessageController;
 use App\Http\Controllers\OnlineNewsletterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnderMaintenanceController;
-use App\Models\OnlineMessages;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
-use League\Csv\Reader;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,20 +27,6 @@ use League\Csv\Reader;
 if (config('app.is_under_maintenance') === false):
 
     if (config('app.debug')):
-
-        Route::get('/csv', function () {
-            $csv = Reader::createFromPath(storage_path('app/data_doctor.csv'));
-            $csv->setHeaderOffset(0);
-            $records = $csv->getRecords();
-            $data = [];
-            foreach ($records as $record) {
-                // Do something with the record
-                // You can access the fields using the named keys
-                $data[] = $record;
-            }
-            return $data; //iterator_to_array($records);
-
-        });
         require __DIR__ . '/test_routes.php';
     endif;
 
@@ -54,9 +38,6 @@ if (config('app.is_under_maintenance') === false):
         ->where(['lang' => '[a-zA-Z]{2}'])
         ->middleware('setlocale')
         ->group(function () {
-            /*if (array_key_exists($locale, Config::get('languages'))) {
-                //Session::put('applocale', $locale);
-            }*/
 
             Route::prefix('/home')->group(function () {
                 Route::controller(HomeController::class)->group(function () {
@@ -77,7 +58,6 @@ if (config('app.is_under_maintenance') === false):
                         Route::post('/', 'create')->name('contact_message');
                         Route::post('/delete', 'delete')->name('contact_message.delete');
                     });
-
             });
 
 
@@ -109,12 +89,7 @@ if (config('app.is_under_maintenance') === false):
 
         });
 
-    Route::controller(DoctorController::class)->group(function () {
-        Route::get('/doctor_create', 'create')->name("doctor.create");
-        Route::post('/doctor_create', 'create')->name("doctor.create");
-        Route::get('/doctor_save', 'store')->name("doctor.store");
-        Route::get('/doctor_get', 'show')->name("doctor.show");
-    });
+
 
 else:
     Route::get('/', [UnderMaintenanceController::class, 'index']);
