@@ -4,7 +4,6 @@ use App\Manifest\AppConstants as AppConstant;
 use Illuminate\Support\Facades\Facade;
 
 
-
 return [
 
     /*
