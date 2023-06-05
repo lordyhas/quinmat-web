@@ -18,7 +18,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'QUINMAT'),
-    'version' => env('APP_VERSION', '0.0.13+2'),
+    'version' => env('APP_VERSION', '0.0.13+3'),
     'is_under_maintenance' => false,
 
     'app_constant' => new AppConstant(),

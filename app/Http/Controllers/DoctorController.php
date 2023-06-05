@@ -11,73 +11,68 @@ use PhpParser\Comment\Doc;
 
 class DoctorController extends Controller
 {
-    public function create(Request $request)
+    public function create(Request $request) : JsonResponse
     {
-        return;
+        if(!$request->has('data')) return response()->json(["message"=> "failed : no data received"]);
+        $data = $request->input('data');
+
+        $this->add_doctor($data);
+
+        return response()->json(["message"=> "Doctor saved"]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request) : JsonResponse
     {
+        if(!$request->has('id')) return response()->json(["message"=> "failed : no id received"]);
+        if(!$request->has('data')) return response()->json(["message"=> "failed : no data received"]);
         $data = $request->input('data');
-        $doctor_id = $request->input("id");
+        $doctor_id = $request->input('id');
         $doctor = Doctor::whereId($doctor_id);
-
         $this->fill_doctor($data, $doctor);
+
+        return response()->json(["message"=> "Doctor(id:$doctor_id) saved"]);
     }
 
     public function show(Request $request) : JsonResponse
     {
-        $data = [];
-        if ($request->has('id')) {
-            $doctor_id = $request->input("id");
-            $doctors = Doctor::whereId($doctor_id);
-        } else {
-            $doctors = Doctor::all();
-            foreach ($doctors as $doctor) {
-                $info = [];
-                $info = $doctor->toArray();
-                //$phones = PhoneNumber::
-                $info['phone_numbers'] = [];
-                $info['email_addresses'] = [];
-
-                $emails = EmailAddress::whereDoctorId($doctor['id']);
-
-                $data['data'] = $info;
-            }
+        if($request->has('where')){
+            $data = $this->readOne($request);
+        }else {
+            $data = $this->readAll();
         }
-        return response()->json($data);
+
+        return response()->json(["data" => $data]);
     }
 
 
-    public function readAll() : array
+    private function readAll() : array
     {
         $data =  array();
         $doctors = Doctor::all();
-
         foreach ($doctors as $doctor) {
             $doc = $doctor->toArray();
 
-            $emails = EmailAddress::whereDoctorId($doctor->id);
-            $phones = PhoneNumber::whereDoctorId($doctor->id);
+            $emails = EmailAddress::whereDoctorId($doctor['id']);
+            $phones = PhoneNumber::whereDoctorId($doctor['id']);
 
-            $doc['phone_numbers'] = $phones;
-            $doc['email_addresses'] = $emails;
+            $doc['phoneNumbers'] = $phones;
+            $doc['emails'] = $emails;
 
-            $data[$doctor->id] = $doc;
+            $data[$doctor['id']] = $doc;
 
         }
         return $data;
     }
 
 
-    public function readOne(Request $request) : JsonResponse
+    private function readOne(Request $request) : array
     {
         if ($request->has('where')) {
             $key = $request->input("where");
             $doctor = Doctor::all()->where($key)->first();
-            return response()->json($doctor->toArray());
+            return $doctor->toArray();
         }
-        return response()->json(["message" => "request has not where parameter"]);
+        return ["message" => "request has not where parameter"];
     }
 
     // php artisan make:command ImportCsvData
@@ -89,13 +84,15 @@ class DoctorController extends Controller
      */
     private function fill_doctor(array $data, Doctor $doctor): void
     {
-        $doctor->first_name = $data['first_name'];
-        $doctor->middle_name = $data['middle_name'];
-        $doctor->last_name = $data['last_name'];
+        $doctor->firstName = $data['firstName'];
+        $doctor->name = $data['name'];
+        $doctor->lastName = $data['lastName'];
         $doctor->sex = $data['sex'];
         $doctor->hospital = $data['hospital'];
         $doctor->speciality = $data['speciality'];
         $doctor->location = $data['location'];
+        $doctor->isDoctor = $data['isDoctor'];
+        //$doctor->lastUpdate = $data['lastUpdate'];
         $doctor->save();
     }
 
@@ -103,22 +100,21 @@ class DoctorController extends Controller
     private function add_doctor(array $data): void
     {
         $doctor = new Doctor();
-        //Doctor::creating([]);
         $this->fill_doctor($data, $doctor);
 
-        $phoneNumbers = $data['phone_numbers'];
+        $phoneNumbers = $data['phoneNumbers'];
         foreach ($phoneNumbers as $phoneNumber) {
             $phone = new PhoneNumber();
-            $phone->phone_number = $phoneNumber;
-            $phone->doctor_id = $doctor->id;
+            $phone->phoneNumber = $phoneNumber;
+            $phone->doctorId = $doctor->id;
             $phone->save();
         }
 
-        $emailAddresses = $data['email_addresses'];
+        $emailAddresses = $data['emails'];
         foreach ($emailAddresses as $emailAddress) {
             $email = new EmailAddress();
             $email->email = $emailAddress;
-            $email->doctor_id = $doctor->id;
+            $email->doctorId = $doctor->id;
             $email->save();
         }
     }
