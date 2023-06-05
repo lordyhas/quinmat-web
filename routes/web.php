@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UnderMaintenanceController;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use League\Csv\Reader;
 
 
 /*
@@ -27,6 +28,21 @@ use Illuminate\Support\Facades\Route;
 if (config('app.is_under_maintenance') === false):
 
     if (config('app.debug')):
+
+        Route::get('/csv', function () {
+            //data_doctor
+            ///doctor-sample-data1
+            $csv = Reader::createFromPath(storage_path('app/data_doctor2.csv'));
+            $csv->setHeaderOffset(0);
+            $records = $csv->getRecords();
+            $data = array();
+            foreach ($records as $record) {
+                $data[] = $record;
+            }
+            return response()->json(["data" => $data]);
+
+        });
+
         require __DIR__ . '/test_routes.php';
     endif;
 
