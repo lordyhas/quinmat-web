@@ -2,46 +2,64 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DoctorRequest;
 use App\Models\Doctor;
 use App\Models\EmailAddress;
 use App\Models\PhoneNumber;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use PhpParser\Comment\Doc;
+
 
 class DoctorController extends Controller
 {
-    public function create(Request $request) : JsonResponse
+    public function create(DoctorRequest $request) : JsonResponse
     {
-        if(!$request->has('data')) return response()->json(["message"=> "failed : no data received"]);
+        if(!$request->has('data')) return response()->json([
+            "success" => false,
+            "message"=> "failed : no data received",
+        ]);
         $data = $request->input('data');
 
         $this->add_doctor($data);
 
-        return response()->json(["message"=> "Doctor saved"]);
+        return response()->json([
+            "success" => true,
+            "message"=> "Doctor saved successfully",
+        ]);
     }
 
-    public function store(Request $request) : JsonResponse
+    public function store(DoctorRequest $request) : JsonResponse
     {
-        if(!$request->has('id')) return response()->json(["message"=> "failed : no id received"]);
-        if(!$request->has('data')) return response()->json(["message"=> "failed : no data received"]);
+        if(!$request->has('id')) return response()->json([
+            "success" => false,
+            "message"=> "failed : no id received",
+        ]);
+        if(!$request->has('data')) return response()->json([
+            "success" => false,
+            "message"=> "failed : no data received",
+        ]);
         $data = $request->input('data');
         $doctor_id = $request->input('id');
         $doctor = Doctor::whereId($doctor_id);
         $this->fill_doctor($data, $doctor);
 
-        return response()->json(["message"=> "Doctor(id:$doctor_id) saved"]);
+        return response()->json([
+            "success" => true,
+            "message"=> "Doctor(id:$doctor_id) saved successfully",
+        ]);
     }
 
-    public function show(Request $request) : JsonResponse
+    public function show(DoctorRequest $request) : JsonResponse
     {
         if($request->has('where')){
             $data = $this->readOne($request);
         }else {
             $data = $this->readAll();
         }
-
-        return response()->json(["data" => $data]);
+        return response()->json([
+            "success" => true,
+            "data" => $data,
+            "message" => "Doctor data sent successfully",
+        ]);
     }
 
 
@@ -59,26 +77,27 @@ class DoctorController extends Controller
             $doc['emails'] = $emails;
 
             $data[$doctor['id']] = $doc;
-
         }
         return $data;
     }
 
-
-    private function readOne(Request $request) : array
+    /**
+     * @param DoctorRequest $request
+     * @return array
+     */
+    private function readOne(DoctorRequest $request) : array
     {
-        if ($request->has('where')) {
-            $key = $request->input("where");
-            $doctor = Doctor::all()->where($key)->first();
-            return $doctor->toArray();
-        }
-        return ["message" => "request has not where parameter"];
+        $key = $request->input("where");
+        $doctor = Doctor::all()->where($key)->first();
+        return $doctor->toArray();
+
+        //return ["message" => "request has not where parameter"];
     }
 
     // php artisan make:command ImportCsvData
 
     /**
-     * @param array $data
+     * @param array $data that contain doctor data
      * @param Doctor $doctor
      * @return void
      */
