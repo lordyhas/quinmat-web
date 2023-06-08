@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hospital wherePhoneNumbers($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereUpdatedAt($value)
- * @property string|null $emergency _call
+ * @ property string|null $emergency _call
  * @mixin \Eloquent
  */
 class Hospital extends Model
