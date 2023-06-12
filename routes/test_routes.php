@@ -7,4 +7,8 @@ Route::get('/compo', function () {
     return view('components');
 });
 
+Route::get('/compox', function () {
+    return view('components');
+});
+
 Route::get('/hotfix', [UnderMaintenanceController::class, 'index']);

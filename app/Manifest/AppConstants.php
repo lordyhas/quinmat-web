@@ -27,9 +27,9 @@ class AppConstants
     public string $country_short = "Congo-Kinshasa";
     public string $country_sigle = "RDC";
     public string $facebook = "https://web.facebook.com/Quinmatlshi/";
-    public string $instagram = "https://www.instagram.com/";
+    public string $instagram = "https://www.instagram.com/quinmat";
     public string $twitter = "https://twitter.com/QuinmatS";
-    public string $linkedin = "https://www.linkedin.com/";
+    public string $linkedin = "https://www.linkedin.com/in/quinmat";
 
 
 

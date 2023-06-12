@@ -13,7 +13,7 @@ class DoctorController extends Controller
 {
     public function create(DoctorRequest $request) : JsonResponse
     {
-        if(!$request->has('data')) return response()->json([
+        if(!$request->has('data') && $request->has('auth')) return response()->json([
             "success" => false,
             "message"=> "failed : no data received",
         ]);
@@ -29,7 +29,7 @@ class DoctorController extends Controller
 
     public function store(DoctorRequest $request) : JsonResponse
     {
-        if(!$request->has('id')) return response()->json([
+        if(!$request->has('id') && $request->has('auth')) return response()->json([
             "success" => false,
             "message"=> "failed : no id received",
         ]);
@@ -61,7 +61,6 @@ class DoctorController extends Controller
             "message" => "Doctor data sent successfully",
         ]);
     }
-
 
     private function readAll() : array
     {

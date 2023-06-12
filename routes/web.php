@@ -42,6 +42,7 @@ if (config('app.is_under_maintenance') === false):
             return response()->json(["data" => $data]);
 
         });
+        Route::get('/welcome', function () {return view('welcome');})->name('welcome');
 
         require __DIR__ . '/test_routes.php';
     endif;
@@ -76,9 +77,6 @@ if (config('app.is_under_maintenance') === false):
                     });
             });
 
-
-            //Route::get('/welcome', function () {return view('welcome');})->name('welcome');
-
             Route::get('/admin', function () {
                 return view('admin');
             })->name('admin');
@@ -104,8 +102,6 @@ if (config('app.is_under_maintenance') === false):
             require __DIR__ . '/blog_routes.php';
 
         });
-
-
 
 else:
     Route::get('/', [UnderMaintenanceController::class, 'index']);
