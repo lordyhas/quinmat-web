@@ -36,15 +36,24 @@ Route::get('/csv', function () {
 
 
 Route::post('/test_post', function (Request $request) {
-
-    if ($request->has('id'))
+    $data = array();
+    if ($request->has('id')){
         $id = $request->get('id');
+        $email = $request->get('email');
+        $password = $request->get('password');
+
+        $data = [
+            'email' => $email,
+            'password' => $password,
+        ];
+    }
     else $id = "null";
 
     return response()->json([
         'status' => true,
         'message' => "Message received successfully!",
         'id' => $id,
+        'data' => $data,
     ]);
 
 });

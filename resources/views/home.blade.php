@@ -11,6 +11,7 @@ Directed by Hassan Kajila.
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Official Website of QUINMAT SARL">
     <meta name="author" content="lordyhas">
+    <meta name="content" content="QUINMAT Profile">
     <title> {{$appX->name}} | Accueil </title>
 
     <link rel="icon" type="image/png" href="{{asset("assets/favicon.ico")}} "/>
@@ -454,8 +455,12 @@ Directed by Hassan Kajila.
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
+            <!--
+                src="https://www.facebook.com/plugins/video.php?height=420&href=https%3A%2F%2Fwww.facebook.com%2FQuinmatlshi%2Fvideos%2F1037023190249461%2F&show_text=false&width=560&t=0"
+
+            -->
             <iframe width="100%" height="475"
-                    src="https://www.facebook.com/plugins/video.php?height=420&href=https%3A%2F%2Fwww.facebook.com%2FQuinmatlshi%2Fvideos%2F1037023190249461%2F&show_text=false&width=560&t=0"
+                    src=""
                     title="YouTube video player" frameborder="0" allowfullscreen>
             </iframe>
         </div>
@@ -674,6 +679,7 @@ Directed by Hassan Kajila.
         </div>
     </div>
 </section>
+
 
 <!-- core  -->
 <script src="{{asset('assets/vendors/jquery/jquery-3.4.1.js')}} "></script>
