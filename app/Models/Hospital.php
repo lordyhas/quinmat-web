@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Hospital
  *
- * @mixin IdeHelperHospital
+ * @ mixin IdeHelperHospital
  * @property int $id
  * @property string $name
  * @property string|null $phone_numbers
@@ -33,7 +33,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Hospital wherePhoneNumbers($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Hospital whereUpdatedAt($value)
  * @ property string|null $emergency _call
- * @mixin \Eloquent
+ * @ mixin \Eloquent
  */
 class Hospital extends Model
 {

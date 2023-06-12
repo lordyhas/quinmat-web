@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Doctor
  *
- * @mixin IdeHelperDoctor
+ * @ mixin IdeHelperDoctor
  * @property int $id
  * @property string|null $firstName
  * @property string|null $name
@@ -38,7 +38,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereSex($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereSpeciality($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Doctor whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @ mixin \Eloquent
  */
 class Doctor extends Model
 {
