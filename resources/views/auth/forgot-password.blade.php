@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+        {{ __('Mot de passe oublié ? Pas de problème. Il suffit de renseigner votre adresse e-mail et nous vous enverrons un lien de réinitialisation de mot de passe qui vous permettra de choisir un nouveau.') }}
     </div>
 
     <!-- Session Status -->
@@ -8,7 +8,6 @@
 
     <form method="POST" action="{{ route('password.email') }}">
         @csrf
-
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -18,7 +17,7 @@
 
         <div class="flex items-center justify-end mt-4">
             <x-primary-button>
-                {{ __('Email Password Reset Link') }}
+                {{ __('Lien de réinitialisation du mot de passe') }}
             </x-primary-button>
         </div>
     </form>

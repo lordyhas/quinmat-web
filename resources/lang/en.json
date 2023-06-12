@@ -39,8 +39,20 @@
     "À propos":"About",
     "Produit":"Product",
     "Nos Services":"Our Services",
-    "":"",
+
+    "Lien de réinitialisation du mot de passe":"Email Password Reset Link",
+    "Mot de passe oublié ? Pas de problème. Il suffit de renseigner votre adresse e-mail et nous vous enverrons un lien de réinitialisation de mot de passe qui vous permettra de choisir un nouveau.":"Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.",
+    "Il s’agit d’une zone sécurisée de l’application. Veuillez confirmer votre mot de passe avant de continuer.":"This is a secure area of the application. Please confirm your password before continuing.",
+
+    "Confirmer":"Confirm",
+    "Réinitialiser le mot de passe":"Reset Password",
+    "Merci de votre inscription ! Avant de commencer, pourriez-vous vérifier votre adresse e-mail en cliquant sur le lien que nous venons de vous envoyer ? Si vous n’avez pas reçu le courriel, nous serons heureux de vous en envoyer un autre.":"Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.",
+    "Un nouveau lien de vérification a été envoyé à l’adresse courriel que vous avez fournie pendant l’inscription.":"A new verification link has been sent to the email address you provided during registration.",
+    "Renvoyer le courriel de vérification":"Resend Verification Email",
 
     "":"",
+
+    "_x_":"",
+    "__":"",
     "_x": "_Null"
 }
