@@ -2,7 +2,7 @@
 
 namespace App\Manifest;
 
-/**
+use Illuminate\Database\Eloquent\Factories\HasFactory;/**
  * App\Manifest
  *
  * @property string $name
@@ -12,11 +12,9 @@ namespace App\Manifest;
  * @property string $country
  *
  * method static name()
-
  */
 class AppConstants
 {
-
 
     public string $name = "QUINMAT";
     public string $mail = "info@quinmat.com";
@@ -31,6 +29,13 @@ class AppConstants
     public string $twitter = "https://twitter.com/QuinmatS";
     public string $linkedin = "https://www.linkedin.com/in/quinmat";
 
+    /**
+     *
+     */
+    public function __construct()
+    {
+
+    }
 
 
     /**
