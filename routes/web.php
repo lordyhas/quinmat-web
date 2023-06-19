@@ -105,7 +105,6 @@ if (config('app.is_under_maintenance') === false):
 
 else:
     Route::get('/', [UnderMaintenanceController::class, 'index']);
-
 endif;
 
 

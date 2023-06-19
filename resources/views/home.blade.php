@@ -3,7 +3,7 @@ Powered by QUINMAT SARL.
 Developed by QUINMAT TEAM.
 Directed by Hassan Kajila.
 -->
-@php $app_x = $appX = new App\Manifest\AppConstants();@endphp
+@php $app_x = $appX = new App\Models\AppConstant();@endphp
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

@@ -1,21 +1,14 @@
 <?php
 
-namespace App\Manifest;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;/**
- * App\Manifest
- *
- * @property string $name
- * @property string $mail
- * @property string $contact
- * @property string $address
- * @property string $country
- *
- * method static name()
- */
-class AppConstants
+use App\Manifest\CountryName;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class AppConstant extends Model
 {
-
+    use HasFactory;
     public string $name = "QUINMAT";
     public string $mail = "info@quinmat.com";
     public string $contact = "(+243) 824 130 000";
@@ -29,13 +22,6 @@ class AppConstants
     public string $twitter = "https://twitter.com/QuinmatS";
     public string $linkedin = "https://www.linkedin.com/in/quinmat";
 
-    /**
-     *
-     */
-    public function __construct()
-    {
-
-    }
 
 
     /**
@@ -117,5 +103,3 @@ class AppConstants
     }
 
 }
-
-

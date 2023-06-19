@@ -1,6 +1,7 @@
 <?php
 
-use App\Manifest\AppConstants as AppConstant;
+
+//use App\Models\AppConstant;
 use Illuminate\Support\Facades\Facade;
 
 
@@ -21,7 +22,7 @@ return [
     'version' => env('APP_VERSION', '0.1.0+2'),
     'is_under_maintenance' => false,
 
-    'app_constant' => new AppConstant(),
+    /*'app_constant' => new AppConstant(),
     'utils' => new AppConstant(),
 
     'mail' => (new AppConstant())->mail,
@@ -30,7 +31,7 @@ return [
     'facebook' => (new AppConstant())->facebook,
     'twitter' => (new AppConstant())->twitter,
     'linkedin' => (new AppConstant())->linkedin,
-    'instagram' => (new AppConstant())->instagram,
+    'instagram' => (new AppConstant())->instagram,*/
 
     /*
     |--------------------------------------------------------------------------
