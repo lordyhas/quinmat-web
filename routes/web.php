@@ -27,7 +27,7 @@ use League\Csv\Reader;
 
 if (config('app.is_under_maintenance') === false):
 
-    if (config('app.debug')):
+    if (config('app.debug') or true):
 
         Route::get('/csv', function () {
             //data_doctor
