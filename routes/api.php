@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/csv', function () {
+Route::get('/doctor-sample/csv', function () {
     //data_doctor
     ///doctor-sample-data1
     $csv = Reader::createFromPath(storage_path('app/data_doctor1.csv'));
@@ -55,7 +55,13 @@ Route::post('/test_post', function (Request $request) {
         'id' => $id,
         'data' => $data,
     ]);
+});
 
+Route::get('/test_get', function () {
+    return response()->json([
+        'status' => true,
+        'message' => "Connection work successfully!",
+    ]);
 });
 
 Route::controller(DoctorController::class)->group(function () {

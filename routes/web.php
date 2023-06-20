@@ -27,7 +27,7 @@ use League\Csv\Reader;
 
 if (config('app.is_under_maintenance') === false):
 
-    //if (config('app.debug') or true):
+    if (config('app.debug')):
 
         Route::get('/csv', function () {
             //data_doctor
@@ -45,7 +45,7 @@ if (config('app.is_under_maintenance') === false):
         Route::get('/welcome', function () {return view('welcome');})->name('welcome');
 
         require __DIR__ . '/test_routes.php';
-    //endif;
+    endif;
 
     Route::get('/', function () {
         return Redirect::route("home.index", ["lang" => "fr"]);
