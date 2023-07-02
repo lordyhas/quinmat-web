@@ -61,12 +61,16 @@ Route::get('/test_get', function () {
     return response()->json([
         'status' => true,
         'message' => "Connection work successfully!",
+        'data' => [],
     ]);
 });
 
 Route::controller(DoctorController::class)->group(function () {
-    Route::post('/doctor/create', 'create')->name("doctor.create");
+    Route::get('/doctors', 'show')->name("doctor.show");
+    Route::get('/doctors/{id}', 'showOnly')->name("doctor.show_only");
+
+    Route::post('/doctors', 'create')->name("doctor.create");
     //Route::post('/doctor_create', 'create')->name("doctor.create");
-    Route::post('/doctor/save', 'store')->name("doctor.store");
-    Route::get('/doctor/retrieve', 'show')->name("doctor.show");
+    Route::put('/doctors', 'store')->name("doctor.store");
+    Route::delete('/doctors', 'delete')->name("doctor.delete");
 });

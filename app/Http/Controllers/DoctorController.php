@@ -62,6 +62,18 @@ class DoctorController extends Controller
         ]);
     }
 
+    public function show_only(DoctorRequest $request) : JsonResponse
+    {
+
+        $data = $this->readOne($request);
+
+        return response()->json([
+            "success" => true,
+            "data" => $data,
+            "message" => "Doctor data sent successfully",
+        ]);
+    }
+
     private function readAll() : array
     {
         $data =  array();
@@ -86,8 +98,8 @@ class DoctorController extends Controller
      */
     private function readOne(DoctorRequest $request) : array
     {
-        $key = $request->input("where");
-        $doctor = Doctor::all()->where($key)->first();
+        $id = $request->input("id");
+        $doctor = Doctor::whereId($id);
         return $doctor->toArray();
 
         //return ["message" => "request has not where parameter"];
