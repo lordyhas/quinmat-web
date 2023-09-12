@@ -64,7 +64,6 @@ class DoctorController extends Controller
 
     public function show_only(DoctorRequest $request) : JsonResponse
     {
-
         $data = $this->readOne($request);
 
         return response()->json([
